@@ -1,0 +1,47 @@
+/*use SASS for colors*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+/*REUSABLE COLORS*/
+:root{
+    --primary: rgb(202, 202, 209);
+    --secondary: rgb(147, 147, 153);
+    --tertiary: white;
+    
+}
+header {
+    text-align: center;
+    background-color: var(--primary);
+    border-style: solid;
+}
+
+body {
+    background-color: var(--secondary);
+}
+
+.container {
+    color: var(--tertiary);
+}
+
+.button {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+/*RECIPE AND DRINK BACKGROUND IMAGES*/
+.recipe-bg {
+    background-image: url("./images/cocktail.png");
+    padding: 150px;
+}
+
+.drink-bg {
+    background-image: url("./images/recipe.jpg");
+    padding: 150px;
+}
+
+.results {
+    background-color: var(--tertiary);
+    color: black;
+}
