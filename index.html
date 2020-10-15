@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--ADDED BOOTSTRAP-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel = "stylesheet" href="./assets/style.css">
+    <title>The Menu</title>
+</head>
+<body>
+    <!--HEADER-->
+    <header>
+        <h1>The Menu</h1>
+    </header>
+
+    
+    <!--RECIPE GENERATOR AND DRINK SECTION-->
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+              <h2>FIND YOUR RECIPE</h2>
+            </div>
+            <div class="col-6">
+              <h2>FIND YOUR COCKTAIL</h2>
+            </div>
+          </div>
+
+
+        <div class="row">
+          <div class="col-6 recipe-bg">
+            <button class = "recipe-btn button">Click here to begin!</button>
+          </div>
+          <div class="col-6 drink-bg">
+            <button class = "drink-btn button">Click here to begin!</button>
+          </div>
+        </div>
+      </div>
+    
+    <!--Final Generated Product Section-->
+    <div>
+        <h2>Your Meals!</h2>
+        <div class = "results">
+            <p>You have no meals yet! Use the above to get started!</p>
+        <!--ELEMENTS TO BE CREATED UPON SELECTION IN JS
+            <p> for recipe + drink name
+            <p> for Ingredients/recipe steps
+            <img> for picture of drink? recipe? both?
+        -->
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src = "./assets/drink.js"></script>
+    <script src = "./assets/recipe.js"></script>
+</body>
+</html>
