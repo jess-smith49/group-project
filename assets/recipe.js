@@ -1,3 +1,4 @@
+// Modal Functions 
 
 // create a variable 'q' for query search and 'i' for ingredients
 
@@ -28,8 +29,7 @@ fetch("https://rapidapi.p.rapidapi.com/?p=1&i=onions%2Cgarlic&q=omelet", {
         console.log(data);
     });
 
-// Modal Functions 
 
-// Add to list button
+
 
 
