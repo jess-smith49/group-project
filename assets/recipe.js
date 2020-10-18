@@ -17,24 +17,14 @@ fetch("https://recipe-puppy.p.rapidapi.com/?p=1&q="+ "spaghetti", {
 	console.log(data);
 	console.log(data.results.title);
 
-	var results = data.results.title
+	
 		
-
-			
-		})
+	var recipeNameEl = document.querySelector("#recipeName")
+	recipeNameEl.textContent = data.results[0].title	
+})
 	
-var recipeName = "#recipeName"		
-		document.querySelector("#recipeName")		
 		
-			
-	
-	
-	
-	
-// 
-
-	
-
+		
 
 // 	var recipeName = document.createElement("title");
 	
@@ -42,10 +32,7 @@ var recipeName = "#recipeName"
 
 // 	console.log(data.results[0].title) 
 
-// var recipeName.textContent = data.results[0].title
-	
-
-	
+// var recipeName.textContent = data.results[0].title	
 
 	
 
@@ -54,3 +41,16 @@ var recipeName = "#recipeName"
 
 //recipeName.setAttribute(thumbnail);  for image.  Add later
 
+// var recipeName = document.createElement("title");
+
+// 	document.innerHTML= results.title;
+
+// // 	var responseContainerEl = document.querySelector("#response-container");
+// 	console.log(data.results[0].title) 
+
+// // 	var recipeName = document.createElement("title");
+// var recipeName.textContent = data.results[0].title
+
+// //recipeName.setAttribute(response.data.title);
+
+// // 	responseContainerEl.appendChild(gifImg);
