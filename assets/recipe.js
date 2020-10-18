@@ -1,6 +1,3 @@
-console.log("Hello World");
-
-
 var mealInput = "spaghetti"
 
 fetch("https://recipe-puppy.p.rapidapi.com/?p=1&q="+ "spaghetti", {
@@ -11,22 +8,34 @@ fetch("https://recipe-puppy.p.rapidapi.com/?p=1&q="+ "spaghetti", {
 	}
 })
 .then(function(response) {
-  
 
   return response.json();
+  
 })
 
-.then(function(response) 
-{ 
+.then(function(data) { 
+	console.log(data);
 
-// 	var responseContainerEl = document.querySelector("#response-container");
+	var results = document.querySelector(".results")
 
-// 	var recipeName = document.createElement("title");
 	
-//recipeName.setAttribute(response.data.title);
 
-// 	responseContainerEl.appendChild(gifImg);
+
+	var recipeName = document.createElement("title");
+	
+	document.innerHTML= results.title;
+
+	console.log(data.results[0].title) 
+
+var recipeName.textContent = data.results[0].title
+	
+
+	
+
+	
 
 
 });
+
+//recipeName.setAttribute(thumbnail);  for image.  Add later
 
