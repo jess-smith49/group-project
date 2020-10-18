@@ -15,27 +15,42 @@ fetch("https://recipe-puppy.p.rapidapi.com/?p=1&q="+ "spaghetti", {
 
 .then(function(data) { 
 	console.log(data);
+	console.log(data.results.title);
 
-	var results = document.querySelector(".results")
+	var results = data.results.title
+		
+
+			
+		})
+	
+var recipeName = "#recipeName"		
+		document.querySelector("#recipeName")		
+		
+			
+	
+	
+	
+	
+// 
 
 	
 
 
-	var recipeName = document.createElement("title");
+// 	var recipeName = document.createElement("title");
 	
-	document.innerHTML= results.title;
+// 	document.innerHTML= results.title;
 
-	console.log(data.results[0].title) 
+// 	console.log(data.results[0].title) 
 
-var recipeName.textContent = data.results[0].title
-	
-
+// var recipeName.textContent = data.results[0].title
 	
 
 	
 
+	
 
-});
+
+//});
 
 //recipeName.setAttribute(thumbnail);  for image.  Add later
 
