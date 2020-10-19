@@ -41,11 +41,10 @@ $("#find-drink").click(function (event) {
             })
             .then(function (data) {
                 displayDrinkList(data);
-            })
-            // clear out user input
-            .then(function () {
-                return $("#drinkName-search").empty();
-            })
+            });
+
+        // reset input field
+
     } else {
         // display a message to user that there is no result and run a new search
         console.log("no results")
@@ -67,11 +66,11 @@ function displayDrinkList(cocktail) {
             } else {
 
                 drinkData = $("<li>").text(cocktail.drinks[i][`strMeasure${k}`] + ' : ' + cocktail.drinks[i][`strIngredient${k}`])
-    
+
                 drinkSection.append(drinkData, drinkIns);
             }
         }
-        
+
     }
 };
 
