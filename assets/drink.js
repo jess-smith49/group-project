@@ -66,7 +66,7 @@ function displayDrinkList(cocktail) {
                 break;
             } else {
 
-                drinkData = $("<li>").text(cocktail.drinks[i][`strIngredient${k}`])
+                drinkData = $("<li>").text(cocktail.drinks[i][`strMeasure${k}`] + ' : ' + cocktail.drinks[i][`strIngredient${k}`])
     
                 drinkSection.append(drinkData, drinkIns);
             }
