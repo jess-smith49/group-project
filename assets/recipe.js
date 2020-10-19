@@ -1,52 +1,28 @@
-var mealInput = "spaghetti"
+//Example Request and Response
 
-fetch("https://recipe-puppy.p.rapidapi.com/?p=1&q="+ "spaghetti", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "recipe-puppy.p.rapidapi.com",
-		"x-rapidapi-key": "736dc35b66msh2bcbc7d41dedb3ap1dfeffjsn376e4d505821"
-	}
-})
-.then(function(response) {
+var recipeNameEl = "recipe-results"
 
-  return response.json(); 
-})
+fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=5e85b9e168244c1cbbe7ed190aca128b&query=pasta&maxFat=25&")
 
-.then(function(data) { 
-	console.log(data)
+.then(response => response.json())
+.then(data => console.log(data)); 
 
-	var recipeNameEl = document.querySelector("#recipe-results-container")
-    recipeNameEl.textContent = data.results[0].title		
-})
+
+
+
+
+
+//document.querySelector("#recipe-results").innerHTML = "Recipe Name: " + data.results[0].title
+
 	
-		
+
+
+
 		
 
-// 	var recipeName = document.createElement("title");
-	
-// 	document.innerHTML= results.title;
-
-// 	console.log(data.results[0].title) 
-
-// var recipeName.textContent = data.results[0].title	
-
-	
 
 
-//});
 
-//recipeName.setAttribute(thumbnail);  for image.  Add later
 
-// var recipeName = document.createElement("title");
 
-// 	document.innerHTML= results.title;
 
-// // 	var responseContainerEl = document.querySelector("#response-container");
-// 	console.log(data.results[0].title) 
-
-// // 	var recipeName = document.createElement("title");
-// var recipeName.textContent = data.results[0].title
-
-// //recipeName.setAttribute(response.data.title);
-
-// // 	responseContainerEl.appendChild(gifImg);
