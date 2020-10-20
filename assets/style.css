@@ -32,12 +32,12 @@ body {
 }
 /*RECIPE AND DRINK BACKGROUND IMAGES*/
 .recipe-bg {
-    background-image: url("./images/cocktail.png");
+    background-image: url("./images/recipe.jpg");
     padding: 150px;
 }
 
 .drink-bg {
-    background-image: url("./images/recipe.jpg");
+    background-image: url("./images/cocktail.png");
     padding: 150px;
 }
 
