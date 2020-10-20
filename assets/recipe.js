@@ -37,6 +37,10 @@ $("#find-recipe").click(function(event){
         .then(function(response){
             return response.json();
         })
+        .then(function(data){
+            console.log(data);
+            displayRecipeList(data);
+        })
         //need to get array and run search
 
 
@@ -50,6 +54,10 @@ $("#find-recipe").click(function(event){
     $("#ingredient-search").val("");
     $("#query-search").val("");
 })
+
+
+//function to display recipe in modal
+
 ////DONE - Used bootstrap in HTML.  Upon click, modal will open with two text entry boxes and a search button
 	// Modal opens with heading "Search Here for a Recipe"
 
