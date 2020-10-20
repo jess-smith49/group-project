@@ -1,114 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--ADDED BOOTSTRAP-->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link rel = "stylesheet" href="./assets/style.css">
-    <title>The Menu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--ADDED BOOTSTRAP-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>The Menu</title>
 </head>
+
 <body>
-    <!--HEADER-->
-    <header>
-        <h1>The Menu</h1>
-    </header>
-
-    
-    <!--RECIPE GENERATOR AND DRINK SECTION-->
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-              <h2>FIND YOUR RECIPE</h2>
-            </div>
-            <div class="col-6">
-              <h2>FIND YOUR COCKTAIL</h2>
-            </div>
-          </div>
+  <!--HEADER-->
+  <header>
+    <h1>The Menu</h1>
+  </header>
 
 
-        <div class="row">
-          <div class="col-6 recipe-bg">
-            <button class = "recipe-btn button" data-toggle="modal" data-target="#recipe-modal">Click here to begin!</button>
+  <!--RECIPE GENERATOR AND DRINK SECTION-->
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <h2>FIND YOUR RECIPE</h2>
+      </div>
+      <div class="col-6">
+        <h2>FIND YOUR COCKTAIL</h2>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-6 recipe-bg">
+        <button class="recipe-btn button" data-toggle="modal" data-target="#recipe-modal">Click here to begin!</button>
+      </div>
+      <div class="col-6 drink-bg">
+        <button class="drink-btn button" data-toggle="modal" data-target="#drink-modal">Click here to begin!</button>
+      </div>
+    </div>
+  </div>
+
+  <!--MODAL FOR RECIPE-->
+  <div id="recipe-modal" class="modal">
+    <!--modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Search Here for a Recipe</h2>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipe-search">
+              <ul>
+                <li></li>
+              </ul>
+            </label>
+            <label for="ingredient-search">Search by ingredients (separate ingredient with a comma):</label>
+            <br>
+            <input type="text" id="ingredient-search">
+            <br>
+            <label for="query-search">Search by name:</label>
+            <br>
+            <input type="text" id="query-search">
           </div>
-          <div class="col-6 drink-bg">
-            <button class = "drink-btn button" data-toggle="modal" data-target="#drink-modal">Click here to begin!</button>
+          <button id="find-recipe">Search</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-save">Add to List</button>
+        <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!--MODAL FOR DRINKS-->
+  <div id="drink-modal" class="modal">
+    <!--modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Search Here for a Cocktail</h2>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="liquor-search">Search by type of liquor:</label>
+            <br>
+            <input type="text" id="liquor-search">
+            <br>
+            <label for="drinkName-search">Search by name:</label>
+            <br>
+            <input type="text" id="drinkName-search">
           </div>
+          <button id="find-drink">Search</button>
+        </form>
+        <div id="drink-search">
+          <ul id="drink-results">
+          </ul>
         </div>
       </div>
-
-      <!--MODAL FOR RECIPE-->
-      <div id="recipe-modal" class="modal">
-        <!--modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2>Search Here for a Recipe</h2>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="recipe-search">
-                  <ul>
-                    <li></li>
-                  </ul>
-                </label>
-              </div>
-              <button>Search</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-save">Add to List</button>
-            <button type="button" class="btn btn-close">Close</button>
-          </div>
-        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-save">Add to List</button>
+        <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
       </div>
+    </div>
+  </div>
 
-      <!--MODAL FOR DRINKS-->
-      <div id="drink-modal" class="modal">
-        <!--modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2>Search Here for a Cocktail</h2>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="drink-search">
-                  <ul>
-                    <li></li>
-                  </ul>
-                </label>
-              </div>
-              <button>Search</button>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-save">Add to List</button>
-            <button type="button" class="btn btn-close">Close</button>
-          </div>
-        </div>
-      </div>
-    
-    <!--Final Generated Product Section-->
-    <div>
-        <h2>Your Meals!</h2>
-        <div class = "results">
-            <p>You have no meals yet! Use the above to get started!</p>
-        <!--ELEMENTS TO BE CREATED UPON SELECTION IN JS
+  <!--Final Generated Product Section-->
+  <div>
+    <h2>Your Meals!</h2>
+    <div class="results">
+      <p>You have no meals yet! Use the above to get started!</p>
+      <!--ELEMENTS TO BE CREATED UPON SELECTION IN JS
             <p> for recipe + drink name
             <p> for Ingredients/recipe steps
             <img> for picture of drink? recipe? both?
         -->
-        </div>
     </div>
+  </div>
 
-    <!--Footer-->
-    <footer></footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src = "./assets/drink.js"></script>
-    <script src = "./assets/recipe.js"></script>
+  <!--Footer-->
+  <footer></footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./assets/drink.js"></script>
+  <script src="./assets/recipe.js"></script>
 </body>
+
 </html>
