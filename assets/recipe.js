@@ -8,16 +8,16 @@ fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=5e85b9e168244c1c
 
 .then(response => response.json())
 
-.then(data => console.log(data)); {
+//.then(data => console.log(data)); {
 
-for (var i = 0; i < 11; i ++) {
-	let title = data.results.title[i];
-	let image = data.results.image[i];
-	console.log(title, image);
-}
-	displayRecipeList(data);
+//for (var i = 0; i < 11; i ++) {
+	//let title = data.results.title[i];
+	//let image = data.results.image[i];
+	//console.log(title, image);
+//}
+	//displayRecipeList(data);
 
-};
+//};
 
 
 
