@@ -60,16 +60,40 @@ $("#find-drink").click(function (event) {
 function displayDrinkList(cocktail) {
     // create a loop to go through the array and return up to 10 drinks
     for (var i = 0; i < 11; i++) {
-        /* let drinkSection = $("#drink-results").attr('class', 'card-deck');
-         let cardBody = $("<div>").attr("class", "card-body");
-         let drinkCard = $("<div>").attr('class' , 'card');
-         let drinkName = $("<li>").text(cocktail.drinks[i].strDrink).attr('class', 'card-title', 'row');
-         let drinkImg = $("<img>").attr('src', cocktail.drinks[i].strDrinkThumb, 'class', 'card-img');
-         let drinkIns = $("<p>").text(cocktail.drinks[i].strInstructions).attr('class', 'col-md', 'card-text');
-         let imgRow = $("<div>").attr('class', 'row no-gutters' );*/
-         
-         //call drink selection and assign card deck class
-         var drinkSection = document.querySelector("#drink-results");
+        let drinkSection = $("#drink-results").attr('class', 'card-deck');
+        //let cardBody = $("<div>").attr("class", "card-body");
+        //let drinkCard = $("<div>").attr('class' , 'card');
+        //let drinkName = $("<li>").text(cocktail.drinks[i].strDrink).attr('class', 'card-title', 'row');
+        //let drinkImg = $("<img>").attr('src', cocktail.drinks[i].strDrinkThumb, 'class', 'card-img');
+        let drinkIns = $("<p>").text(cocktail.drinks[i].strInstructions);
+        //let imgRow = $("<div>").attr('class', 'row no-gutters' );
+        //drinkSection.append(drinkName, drinkImg);
+
+        drinkSection.append(
+            $('<div/>', { 'class': 'container-fluid' }).append(
+                $('<div/>', { 'class': 'row' })(
+                    $('<div/>', { 'class': 'col-12 mt-3' })(
+                        $('<div/>', { 'class': 'card' })(
+                            $('<div/', { 'class': 'card-horizontal' })(
+                                $('<div/>', { 'class': 'img-square-wrapper' }(
+                                    $("<img>").attr('src', cocktail.drinks[i].strDrinkThumb, 'class', 'card-img')
+                                )).append,
+                                $('<div/>', { 'class': 'card-body' })(
+                                    $('<div/>', { 'class': 'card-title' })(
+                                        $("<li>").text(cocktail.drinks[i].strDrink)
+                                    ).append,
+                                    $('<div/>', { 'class': 'card-text' })(
+                                        $("<p>").text(cocktail.drinks[i].strInstructions)
+                                    ).append
+                                )
+                            )
+                        )
+                    )
+                )  
+            )
+        )
+        //call drink selection and assign card deck class
+        /* var drinkSection = document.querySelector("#drink-results");
          drinkSection.classList.add("card-group", "container-fluid");
 
         //get drink title
@@ -116,14 +140,14 @@ function displayDrinkList(cocktail) {
 
        horiCardEl.appendChild(cardBodyEl);
 
-       drinkSection.appendChild(rowEl);
+       drinkSection.appendChild(rowEl);*/
 
 
         //finish appending proper divs inside of other divs--figure out proper order.
         //add save button to each card 
 
 
-        
+
 
 
 
@@ -147,8 +171,8 @@ function displayDrinkList(cocktail) {
         }
 
     }
-};
 
+};
 
 
 
