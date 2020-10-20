@@ -57,7 +57,19 @@ $("#find-recipe").click(function(event){
 
 
 //function to display recipe in modal
+function displayRecipeList(){
+    for (var i = 0; i < 11; i ++) {
+        let title = data.results.title[i];
+        let image = data.results.image[i];
+        console.log(title, image);
+    }
+}
 
+
+//ADD TO LIST FUNCTION
+$("#food-list").click(function(event){
+    console.log("clicked");
+})
 ////DONE - Used bootstrap in HTML.  Upon click, modal will open with two text entry boxes and a search button
 	// Modal opens with heading "Search Here for a Recipe"
 
