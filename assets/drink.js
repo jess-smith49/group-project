@@ -87,6 +87,7 @@ function displayDrinkList(cocktail) {
     }
 };
 
-
-
+$("#drink-list").click(function(event){
+    
+})
 
