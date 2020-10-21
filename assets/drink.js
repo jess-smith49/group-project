@@ -33,19 +33,19 @@ $("#find-drink").click(function (event) {
                 //     drinkArr.push(randomDrinks);
                 //     console.log(drinkArr);
 
-                    // run a loop to retrieve all results
-                    for (var i = 0; i < 11; i++) {
+                // run a loop to retrieve all results
+                for (var i = 0; i < 11; i++) {
 
-                        let drinkId = response.drinks[i].idDrink;
+                    let drinkId = response.drinks[i].idDrink;
 
-                        fetch('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drinkId)
-                            .then(function (response) {
-                                return response.json();
-                            })
-                            .then(function (data) {
-                                displayDrinkList(data);
-                            })
-                    }
+                    fetch('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drinkId)
+                        .then(function (response) {
+                            return response.json();
+                        })
+                        .then(function (data) {
+                            displayDrinkList(data);
+                        })
+                }
                 //}
             });
     } else if (nameString) {
@@ -106,16 +106,43 @@ function displayDrinkList(cocktail) {
                     drinkSection.append(drinkData, drinkIns);
                 }
             }
-
-        }
-
+        };
     }
-};
+    // append to modal
+    let insCard = `<div class="container-fluid">
+    <div class="row">
+    <div class="col-12 mt-3">
+    <div class="card">
+    <div class="card-horizontal">
+    <div class="img-square-wrapper">
+    <img class="card-img" src= ${drinkImg}>
+    </div>
+    <div class="card-body">
+    <div class="card-title">${drinkName}</div>
+    <p class="card-text">${drinkData}</p>
+    <p class="card-text">${drinkIns}</p>
+    </div>
+    <button class="btn btn-secondary btn-sm" id="saveBtn" type="submit">Click to Save</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>`
+    drinkSection.append(insCard);
+
+}
+
 
 // if there are no results
 function noResults() {
     $("#drink-results").html('<p>No Results</p>');
 }
+
+
+
+
+
+
 
 
 
