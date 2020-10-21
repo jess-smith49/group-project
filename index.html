@@ -18,25 +18,29 @@
 
 
   <!--RECIPE GENERATOR AND DRINK SECTION-->
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <h2>FIND YOUR RECIPE</h2>
+  <div class="hero">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6">
+          <h2>FIND YOUR RECIPE</h2>
+        </div>
+        <div class="col-6">
+          <h2>FIND YOUR COCKTAIL</h2>
+        </div>
       </div>
-      <div class="col-6">
-        <h2>FIND YOUR COCKTAIL</h2>
-      </div>
-    </div>
 
 
-    <div class="row">
-      <div class="col-6 recipe-bg">
-        <button class="recipe-btn button" data-toggle="modal" data-target="#recipe-modal">Click here to begin!</button>
-      </div>
-      <div class="col-6 drink-bg">
-        <button class="drink-btn button" data-toggle="modal" data-target="#drink-modal">Click here to begin!</button>
+      <div class="row">
+        <div class="col-6 recipe-bg">
+          <button class="recipe-btn button" data-toggle="modal" data-target="#recipe-modal">Click here to
+            begin!</button>
+        </div>
+        <div class="col-6 drink-bg">
+          <button class="drink-btn button" data-toggle="modal" data-target="#drink-modal">Click here to begin!</button>
+        </div>
       </div>
     </div>
+<<<<<<< HEAD
   </div>
 
   <!--MODAL FOR RECIPE-->
@@ -65,38 +69,77 @@
       <div class="modal-footer">
         <button id = "add-to-food-list" type="button" class="btn btn-save">Add to List</button>
         <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+=======
+    </hero>
+    <!--MODAL FOR RECIPE-->
+    <div id="recipe-modal" class="modal">
+      <!--modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Search Here for a Recipe</h2>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form>
+              <div class="form-group">
+                <label for="recipe-search">
+                  <ul>
+                    <li></li>
+                  </ul>
+                </label>
+                <label for="ingredient-search">Search by ingredients (separate ingredient with a comma):</label>
+                <br>
+                <input type="text" id="ingredient-search">
+                <br>
+                <label for="query-search">Search by name:</label>
+                <br>
+                <input type="text" id="query-search">
+              </div>
+              <button id="find-recipe">Search</button>
+            </form>
+          </div>
+        </div>
+>>>>>>> feature/modals
       </div>
     </div>
-  </div>
 
-  <!--MODAL FOR DRINKS-->
-  <div id="drink-modal" class="modal">
-    <!--modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Search Here for a Cocktail</h2>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="liquor-search">Search by type of liquor:</label>
-            <br>
-            <input type="text" id="liquor-search">
-            <br>
-            <label for="drinkName-search">Search by name:</label>
-            <br>
-            <input type="text" id="drinkName-search">
-          </div>
-          <button id="find-drink">Search</button>
-        </form>
-        <div id="drink-search">
-          <ul id="drink-results">
-          </ul>
+    <!--MODAL FOR DRINKS-->
+    <div id="drink-modal" class="modal">
+      <!--modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Search Here for a Cocktail</h2>
         </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="container-fluid">
+            <form>
+              <div class="form-group">
+                <label for="liquor-search">Search by type of liquor:</label>
+                <br>
+                <input type="text" id="liquor-search">
+                <br>
+                <label for="drinkName-search">Search by name:</label>
+                <br>
+                <input type="text" id="drinkName-search">
+              </div>
+              <button id="find-drink">Search</button>
+            </form>
+          </div>
+        </div>
+<<<<<<< HEAD
       </div>
       <div class="modal-footer">
         <button id = "drink-list" type="button" class="btn btn-save">Add to List</button>
         <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+=======
+          <div id="drink-search">
+            <ul id="drink-results">
+            </ul>
+          </div>
+          <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+        </div>
+>>>>>>> feature/modals
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 //SEARCH FUNCTION
 $("#find-recipe").click(function(event){
     console.log("clicked");
@@ -32,6 +33,17 @@ function displayRecipeList(){
         let recipeIns = $("<p>")
     }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
