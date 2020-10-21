@@ -20,7 +20,6 @@ fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=5e85b9e168244c1c
 //};
 
 
-
 // DONE - Used bootstrap in HTML.   Click event for when "Click here to begin" button is selected-
 
 //SEARCH FUNCTION
