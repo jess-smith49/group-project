@@ -32,16 +32,57 @@ body {
 }
 /*RECIPE AND DRINK BACKGROUND IMAGES*/
 .recipe-bg {
-    background-image: url("./images/cocktail.png");
+    background-image: url("./images/recipe.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
     padding: 150px;
+
 }
 
 .drink-bg {
-    background-image: url("./images/recipe.jpg");
+    background-image: url("./images/cocktail.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
     padding: 150px;
 }
 
 .results {
     background-color: var(--tertiary);
     color: black;
+}
+
+img {
+    width: 200px;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+    border: black 2px solid;
+}
+.card-img {
+    height: 100%;
+    width: 200px;
+    border-radius: 0%;
+  
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+    text-align: center;
+}
+.card-text {
+    font-size: 15px;
+    text-align: center;
+}
+#saveBtn {
+    width: 40px;
+    border-radius: 0%;
 }
