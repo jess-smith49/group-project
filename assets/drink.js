@@ -122,7 +122,7 @@ function displayDrinkList(cocktail) {
 
 
 
-$(".saveBtn").click(function(event){
+/*$(".saveBtn").click(function(event){
     var allSavedDrinks = [];
     var storedDrinks = JSON.parse(localStorage.getItem("stored-drinks"));
 
@@ -137,5 +137,5 @@ $(".saveBtn").click(function(event){
     allSavedDrinks.push(savedDrinks);
 
     localStorage.setItem("stored-drinks", allSavedDrinks);
-})
+})*/
 
