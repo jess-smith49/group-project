@@ -58,89 +58,140 @@ $("#find-drink").click(function (event) {
 
 // function to display drinks in modal
 function displayDrinkList(cocktail) {
+    console.log(cocktail);
     // create a loop to go through the array and return up to 10 drinks
-    for (var i = 0; i < 11; i++) {
-        let drinkSection = $("#drink-results").attr('class', 'card-deck');
-        //let cardBody = $("<div>").attr("class", "card-body");
-        //let drinkCard = $("<div>").attr('class' , 'card');
-        //let drinkName = $("<li>").text(cocktail.drinks[i].strDrink).attr('class', 'card-title', 'row');
-        //let drinkImg = $("<img>").attr('src', cocktail.drinks[i].strDrinkThumb, 'class', 'card-img');
-        let drinkIns = $("<p>").text(cocktail.drinks[i].strInstructions);
-        //let imgRow = $("<div>").attr('class', 'row no-gutters' );
-        //drinkSection.append(drinkName, drinkImg);
+    let drinkSection = $("#drink-results");
+    //for (var i = 0; i < 1; i++) {
+    //let drinkName = $("<li>").text(cocktail.drinks[0].strDrink);
+    let drinkName = cocktail.drinks[0].strDrink;
+    let drinkImg =  cocktail.drinks[0].strDrinkThumb;
+    //let drinkIns = $("<p>").text(cocktail.drinks[0].strInstructions);
+    let drinkIns = cocktail.drinks[0].strInstructions;
 
-        drinkSection.append(
-            $('<div/>', { 'class': 'container-fluid' }).append(
-                $('<div/>', { 'class': 'row' })(
-                    $('<div/>', { 'class': 'col-12 mt-3' })(
-                        $('<div/>', { 'class': 'card' })(
-                            $('<div/', { 'class': 'card-horizontal' })(
-                                $('<div/>', { 'class': 'img-square-wrapper' }(
-                                    $("<img>").attr('src', cocktail.drinks[i].strDrinkThumb, 'class', 'card-img')
-                                )).append,
-                                $('<div/>', { 'class': 'card-body' })(
-                                    $('<div/>', { 'class': 'card-title' })(
-                                        $("<li>").text(cocktail.drinks[i].strDrink)
-                                    ).append,
-                                    $('<div/>', { 'class': 'card-text' })(
-                                        $("<p>").text(cocktail.drinks[i].strInstructions)
-                                    ).append
-                                )
-                            )
-                        )
-                    )
-                )  
-            )
-        )
+
+
+
+
+
+
+    // create a loop to go through and return the list of ingredients
+    for (var k = 1; k < 16; k++) {
+        // check if any of the ingredients are null or empty
+        if (cocktail.drinks[0][`strIngredient${k}`] === null || cocktail.drinks[0][`strIngredient${k}`] === "") {
+            break;
+        } else {
+            // check if any of the measurements are null or empty
+            if (cocktail.drinks[0][`strMeasure${k}`] === null) {
+                drinkData = cocktail.drinks[0][`strIngredient${k}`]
+                //drinkData = $("<li>").text(cocktail.drinks[0][`strIngredient${k}`])
+
+
+            } else {
+                // retrieve the measurement and ingredients
+                drinkData = cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`]
+                //   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
+            }
+            // append to modal
+        }
+    };
+    //}
+    let insCard = `<div class="container-fluid>
+    <div class="row">
+    <div class="col-12 mt-3">
+    <div class="card">
+    <div class="card-horizontal">
+    <div class="img-square-wrapper">
+    <img class="card-img" src= ${drinkImg}>
+    </div>
+    <div class="card-body">
+    <div class="card-title">${drinkName}</div>
+    <p class="card-text">${drinkData}</p>
+    <p class="card-text">${drinkIns}</p>
+    </div>
+    <button class="btn btn-secondary btn-sm" id="saveBtn" type="submit">Click to Save</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>`
+    drinkSection.append(insCard);
+}
+
+     // drinkSection.append(insCard);
+    //  drinkSection.append(
+    //         $('<div/>', { 'class': 'container-fluid' }).append(
+    //             $('<div/>', { 'class': 'row' }).append(
+    //                 $('<div/>', { 'class': 'col-12 mt-3' }).append(
+    //                     $('<div/>', { 'class': 'card' }).append(
+    //                         $('<div/', { 'class': 'card-horizontal' }).append(
+    //                             $('<div/>', { 'class': 'img-square-wrapper' }).append(
+    //                                 $("<img>").attr('src', cocktail.drinks[i].strDrinkThumb, 'class', 'card-img').append
+    //                             ).append(
+    //                             $('<div/>', { 'class': 'card-body' }).append(
+    //                                 $('<div/>', { 'class': 'card-title' }).append(
+    //                                     $("<li>").text(cocktail.drinks[i].strDrink)
+    //                                 ).append(
+    //                                 $('<div/>', { 'class': 'card-text' }).append(
+    //                                     $("<p>").text(cocktail.drinks[i].strInstructions)
+    //                                 )
+    //                             )
+    //                         )
+    //                     )
+    //                 )
+    //             )  
+    //         )
+    //     )
+    //  )
+    //  )
         //call drink selection and assign card deck class
-        /* var drinkSection = document.querySelector("#drink-results");
-         drinkSection.classList.add("card-group", "container-fluid");
+/* var drinkSection = document.querySelector("#drink-results");
+ drinkSection.classList.add("card-group", "container-fluid");
 
-        //get drink title
-        var drinkName = document.createElement("li");
-        drinkName.classList.add("card-title")
-        drinkName.textContent = cocktail.drinks[i].strDrink;
-        //get drink image
-        var drinkImg = document.createElement("img");
-        drinkImg.classList.add("img-square-wrapper");
-        drinkImg.setAttribute("src" , cocktail.drinks[i].strDrinkThumb);
-        //get drink instructions
-        var drinkIns = document.createElement("p");
-        drinkIns.classList.add("card-text")
-        drinkIns.textContent = cocktail.drinks[i].strInstructions;
-        //create div elements to hold and style drink recipe cards
-        var cardEl = document.createElement("div");
-        cardEl.classList.add("card");
+//get drink title
+var drinkName = document.createElement("li");
+drinkName.classList.add("card-title")
+drinkName.textContent = cocktail.drinks[i].strDrink;
+//get drink image
+var drinkImg = document.createElement("img");
+drinkImg.classList.add("img-square-wrapper");
+drinkImg.setAttribute("src" , cocktail.drinks[i].strDrinkThumb);
+//get drink instructions
+var drinkIns = document.createElement("p");
+drinkIns.classList.add("card-text")
+drinkIns.textContent = cocktail.drinks[i].strInstructions;
+//create div elements to hold and style drink recipe cards
+var cardEl = document.createElement("div");
+cardEl.classList.add("card");
 
-        var cardBodyEl = document.createElement("div");
-        cardBodyEl.classList.add("card-body");
+var cardBodyEl = document.createElement("div");
+cardBodyEl.classList.add("card-body");
 
-        var cardSizeEl = document.createElement("div");
-        cardSizeEl.classList.add("col-12", "mt-3");
+var cardSizeEl = document.createElement("div");
+cardSizeEl.classList.add("col-12", "mt-3");
 
-        var horiCardEl = document.createElement("div");
-        horiCardEl.classList.add("card-horizontal");
+var horiCardEl = document.createElement("div");
+horiCardEl.classList.add("card-horizontal");
 
-        var rowEl = document.createElement("div");
-        rowEl.classList.add("row");
+var rowEl = document.createElement("div");
+rowEl.classList.add("row");
 
-        var imgSizeEl = document.createElement("div");
-        imgSizeEl.classList.add("col-md-4");
+var imgSizeEl = document.createElement("div");
+imgSizeEl.classList.add("col-md-4");
 
-        //append elements to the drink results section
+//append elements to the drink results section
 
-       rowEl.appendChild(cardSizeEl);
-       cardSizeEl.appendChild(cardEl);
-       cardSizeEl.appendChild(drinkName);
-       cardSizeEl.appendChild(drinkIns);
-       cardEl.appendChild(horiCardEl);
+rowEl.appendChild(cardSizeEl);
+cardSizeEl.appendChild(cardEl);
+cardSizeEl.appendChild(drinkName);
+cardSizeEl.appendChild(drinkIns);
+cardEl.appendChild(horiCardEl);
 
-       horiCardEl.appendChild(imgSizeEl);
-       imgSizeEl.appendChild(drinkImg);
+horiCardEl.appendChild(imgSizeEl);
+imgSizeEl.appendChild(drinkImg);
 
-       horiCardEl.appendChild(cardBodyEl);
+horiCardEl.appendChild(cardBodyEl);
 
-       drinkSection.appendChild(rowEl);*/
+drinkSection.appendChild(rowEl);*/
 
 
         //finish appending proper divs inside of other divs--figure out proper order.
@@ -151,28 +202,10 @@ function displayDrinkList(cocktail) {
 
 
 
-        // create a loop to go through and return the list of ingredients
-        for (var k = 1; k < 16; k++) {
-            // check if any of the ingredients are null or empty
-            if (cocktail.drinks[i][`strIngredient${k}`] === null || cocktail.drinks[i][`strIngredient${k}`] === "") {
-                break;
-            } else {
-                // check if any of the measurements are null or empty
-                if (cocktail.drinks[i][`strMeasure${k}`] === null) {
-                    drinkData = $("<li>").text(cocktail.drinks[i][`strIngredient${k}`])
 
-                } else {
-                    // retrieve the measurement and ingredients
-                    drinkData = $("<li>").text(cocktail.drinks[i][`strMeasure${k}`] + ' : ' + cocktail.drinks[i][`strIngredient${k}`])
-                }
-                // append to modal
-                drinkSection.append(drinkData, drinkIns);
-            }
-        }
 
-    }
 
-};
+
 
 
 
