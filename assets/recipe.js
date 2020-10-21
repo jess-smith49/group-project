@@ -1,23 +1,4 @@
 
-//Request and Response-Functioning (example search pasta & max fat)
-
-//fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=5e85b9e168244c1cbbe7ed190aca128b")
-
-//.then(response => response.json())
-
-//.then(data => console.log(data)); {
-
-/*for (var i = 0; i < 11; i ++) {
-	let title = data.results.title[i];
-	let image = data.results.image[i];
-	console.log(title, image);
-}
-	displayRecipeList(data);
-
-};*/
-
-
-
 //SEARCH FUNCTION
 $("#find-recipe").click(function(event){
     console.log("clicked");
