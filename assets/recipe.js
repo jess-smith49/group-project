@@ -1,5 +1,5 @@
 
-<<<<<<< HEAD
+
 //SEARCH FUNCTION
 $("#find-recipe").click(function(event){
     console.log("clicked");

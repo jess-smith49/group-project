@@ -102,7 +102,9 @@ function displayDrinkList(cocktail) {
     <p class="card-text">${drinkData}</p>
     <p class="card-text">${drinkIns}</p>
     </div>
+    <div class="modal-footer>
     <button class="btn btn-secondary btn-sm" id="saveBtn" type="submit">Click to Save</button>
+    </div>
     </div>
     </div>
     </div>
