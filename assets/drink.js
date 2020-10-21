@@ -67,13 +67,6 @@ function displayDrinkList(cocktail) {
     let drinkImg =  cocktail.drinks[0].strDrinkThumb;
     //let drinkIns = $("<p>").text(cocktail.drinks[0].strInstructions);
     let drinkIns = cocktail.drinks[0].strInstructions;
-    let drinkIngs = cocktail.drinks[0].strIngredient;
-
-
-
-
-
-
 
     // create a loop to go through and return the list of ingredients
     for (var k = 1; k < 16; k++) {
@@ -94,30 +87,32 @@ function displayDrinkList(cocktail) {
             }
             // append to modal
         }
+        }
+        let insCard = `<div class="container-fluid>
+        <div class="row">
+        <div class="col-12 mt-3">
+        <div class="card">
+        <div class="card-horizontal">
+        <div class="img-square-wrapper">
+        <img class="card-img" src= ${drinkImg}>
+        </div>
+        <div class="card-body">
+        <div class="card-title">${drinkName}</div>
+        <p class="card-text">${drinkIngs}</p>
+        <p class="card-text">${drinkData}</p>
+        <p class="card-text">${drinkIns}</p>
+        </div>
+        <button class="btn btn-secondary btn-sm" id="saveBtn" type="submit">Click to Save</button>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>`
+        drinkSection.append(insCard);
     };
     //}
-    let insCard = `<div class="container-fluid>
-    <div class="row">
-    <div class="col-12 mt-3">
-    <div class="card">
-    <div class="card-horizontal">
-    <div class="img-square-wrapper">
-    <img class="card-img" src= ${drinkImg}>
-    </div>
-    <div class="card-body">
-    <div class="card-title">${drinkName}</div>
-    <p class="card-text">${drinkIngs}</p>
-    <p class="card-text">${drinkData}</p>
-    <p class="card-text">${drinkIns}</p>
-    </div>
-    <button class="btn btn-secondary btn-sm" id="saveBtn" type="submit">Click to Save</button>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>`
-    drinkSection.append(insCard);
-}
+
+
 
      // drinkSection.append(insCard);
     //  drinkSection.append(
