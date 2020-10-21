@@ -80,7 +80,8 @@
           <h2>Search Here for a Cocktail</h2>
         </div>
         <div class="modal-body">
-          <div class="container-fluid">
+          <div class="card">
+            <div class="container-fluid">
             <form>
               <div class="form-group">
                 <label for="liquor-search">Search by type of liquor:</label>
@@ -93,35 +94,37 @@
               </div>
               <button id="find-drink">Search</button>
             </form>
-            <div id="drink-search">
-              <ul id="drink-results">
-              </ul>
-            </div>
-            <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
           </div>
+        </div>
+          <div id="drink-search">
+            <ul id="drink-results">
+            </ul>
+          </div>
+          <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
+  </div>
 
-    <!--Final Generated Product Section-->
-    <div>
-      <h2>Your Meals!</h2>
-      <div class="results">
-        <p>You have no meals yet! Use the above to get started!</p>
-        <!--ELEMENTS TO BE CREATED UPON SELECTION IN JS
+  <!--Final Generated Product Section-->
+  <div>
+    <h2>Your Meals!</h2>
+    <div class="results">
+      <p>You have no meals yet! Use the above to get started!</p>
+      <!--ELEMENTS TO BE CREATED UPON SELECTION IN JS
             <p> for recipe + drink name
             <p> for Ingredients/recipe steps
             <img> for picture of drink? recipe? both?
         -->
-      </div>
     </div>
+  </div>
 
-    <!--Footer-->
-    <footer></footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="./assets/drink.js"></script>
-    <script src="./assets/recipe.js"></script>
+  <!--Footer-->
+  <footer></footer>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="./assets/drink.js"></script>
+  <script src="./assets/recipe.js"></script>
 </body>
 
 </html>

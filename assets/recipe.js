@@ -20,7 +20,6 @@ fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=5e85b9e168244c1c
 //};
 
 
-
 // DONE - Used bootstrap in HTML.   Click event for when "Click here to begin" button is selected-
 ////DONE - Used bootstrap in HTML.  Upon click, modal will open with two text entry boxes and a search button
 	// Modal opens with heading "Search Here for a Recipe"
