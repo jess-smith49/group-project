@@ -2,7 +2,7 @@
 
 //Request and Response-Functioning (example search pasta & max fat)
 
-var recipeNameEl = "recipe-results"
+//var recipeNameEl = "recipe-results"
 
 fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=5e85b9e168244c1cbbe7ed190aca128b")
 
@@ -59,8 +59,12 @@ $("#find-recipe").click(function(event){
 //function to display recipe in modal
 function displayRecipeList(){
     for (var i = 0; i < 11; i ++) {
-        let title = data.results.title[i];
-        let image = data.results.image[i];
+        let recipeSection = $("#recipe-results")
+        let recipeName = $("<li>")
+        let recipeImg = $("<img>")
+        let recipeIns = $("<p>")
+        //let title = data.results.title[i];
+        //let image = data.results.image[i];
         console.log(title, image);
     }
 }
@@ -86,8 +90,6 @@ $("#food-list").click(function(event){
 //Search button - Click event
 //Do we need a second search button.  If yes, will cut down on a lot of if/then.  Currently, if we use one search button and user enters text into both boxes it will search for both.  We could also throw an error - enter information in one box only.
 
-//Return 10 items.  Name of recipe, thumbnail and ingredient list/instructions
-  //Second Modal????  New window????
 
 
 
