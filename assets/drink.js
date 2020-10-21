@@ -67,6 +67,7 @@ function displayDrinkList(cocktail) {
     let drinkImg =  cocktail.drinks[0].strDrinkThumb;
     //let drinkIns = $("<p>").text(cocktail.drinks[0].strInstructions);
     let drinkIns = cocktail.drinks[0].strInstructions;
+    let drinkIngs = cocktail.drinks[0].strIngredient;
 
 
 
@@ -105,6 +106,7 @@ function displayDrinkList(cocktail) {
     </div>
     <div class="card-body">
     <div class="card-title">${drinkName}</div>
+    <p class="card-text">${drinkIngs}</p>
     <p class="card-text">${drinkData}</p>
     <p class="card-text">${drinkIns}</p>
     </div>
