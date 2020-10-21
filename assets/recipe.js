@@ -1,4 +1,4 @@
-console.dir(window.document);
+//console.dir(window.document);
 
 //Request and Response-Functioning (example search pasta & max fat)
 
@@ -22,6 +22,34 @@ fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=5e85b9e168244c1c
 
 
 // DONE - Used bootstrap in HTML.   Click event for when "Click here to begin" button is selected-
+
+//SEARCH FUNCTION
+$("#find-recipe").click(function(event){
+    console.log("clicked");
+
+    event.preventDefault();
+
+    //getting text from ingredient input
+    var ingredientSearchEl = $("#ingredient-search").val().trim();
+
+    //fetch by ingredient, DELIMIMED BY A COMMA!!!
+    fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=5e85b9e168244c1cbbe7ed190aca128b" + ingredientSearchEl)
+        .then(function(response){
+            return response.json();
+        })
+        //need to get array and run search
+
+
+
+
+    //getting text from name of recipe input 
+    var recipeNameEl = $("#query-search").val().trim();
+
+
+    //clear content out after search
+    $("#ingredient-search").val("");
+    $("#query-search").val("");
+})
 ////DONE - Used bootstrap in HTML.  Upon click, modal will open with two text entry boxes and a search button
 	// Modal opens with heading "Search Here for a Recipe"
 
