@@ -8,16 +8,16 @@ $("#find-drink").click(function (event) {
     var liquorSearchEl = $("#liquor-search").val().trim();
 
     // fetch data by type of liquor
-    fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + liquorSearchEl)
+    fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${liquorSearchEl}`)
         .then(function (response) {
             return response.json();
         })
-        // retrieve cocktail ID and run search by ID
-        .then(function (response) {
-            for (var i = 0; i < 11; i++) {
-                let drinkId = response.drinks[i].idDrink;
-                //console.log(drinkId)
-                fetch('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drinkId)
+            // retrieve cocktail ID and run search by ID
+            .then(function (response) {
+                for (var i = 0; i < 11; i++) {
+                    let drinkId = response.drinks[i].idDrink;
+                    //console.log(drinkId)
+                    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`)
                     .then(function (response) {
                         return response.json();
                     })
@@ -25,17 +25,18 @@ $("#find-drink").click(function (event) {
                         console.log(data);
                         displayDrinkList(data);
                     })
-            }
-        });
-
-
-    // if searching by name, retrieve text from input field
+                }
+                
+            });
+            
+            
+            // if searching by name, retrieve text from input field
     var drinkNameSearchEl = $("#drinkName-search").val().trim();
     console.log(drinkNameSearchEl);
 
     if (drinkNameSearchEl) {
         // fetch data by drink name (note-if the drink name is two words long, the two words should be separated by an underscore)
-        fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkNameSearchEl)
+        fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkNameSearchEl}`)
             .then(function (response) {
                 return response.json();
             })
@@ -67,7 +68,7 @@ function displayDrinkList(cocktail) {
     let drinkImg =  cocktail.drinks[0].strDrinkThumb;
     //let drinkIns = $("<p>").text(cocktail.drinks[0].strInstructions);
     let drinkIns = cocktail.drinks[0].strInstructions;
-        3
+        //3
         
         // create a loop to go through and return the list of ingredients
         for (var k = 1; k < 16; k++) {
@@ -114,7 +115,7 @@ function displayDrinkList(cocktail) {
         
     }
 
-    
+
 
 
 //     //}
