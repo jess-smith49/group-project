@@ -27,36 +27,37 @@ $("#find-drink").click(function (event) {
             .then(function (response) {
 
                 // assign a variable to an empty array
-                let drinkArr = [];
+                // let drinkArr = [];
+                // for (var d = 0; d < response.length; d++) {
+                //     let randomDrinks = response.splice(Math.random(Math.floor() * response.length), 10);
+                //     drinkArr.push(randomDrinks);
+                //     console.log(drinkArr);
 
-                // run a loop to retrieve all results
-                for (var i = 0; i < response.drinks.length; i++) {
+                    // run a loop to retrieve all results
+                    for (var i = 0; i < 11; i++) {
 
-                    let drinkId = response.drinks[i].idDrink;
+                        let drinkId = response.drinks[i].idDrink;
 
-                    fetch('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drinkId)
-                        .then(function (response) {
-                            return response.json();
-                        })
-                        .then(function (data) {
-                            console.log(data);
-                            // pick 10 random drinks
-                            let tenRandomDrink = data.splice(Math.floor(Math.random() * data.length), 1)
-                            console.log(tenRandomDrink);
-                            //displayDrinkList(data);
-                        })
+                        fetch('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + drinkId)
+                            .then(function (response) {
+                                return response.json();
+                            })
+                            .then(function (data) {
+                                displayDrinkList(data);
+                            })
                     }
-                });
-            } else if (nameString) {
-                
-                // fetch data by drink name
-                fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + nameString)
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (data) {
-                    displayDrinkList(data);
-                });
+                //}
+            });
+    } else if (nameString) {
+
+        // fetch data by drink name
+        fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + nameString)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                displayDrinkList(data);
+            });
 
     } else {
 
@@ -73,16 +74,16 @@ $("#find-drink").click(function (event) {
 // function to display drinks in modal
 function displayDrinkList(cocktail) {
     let drinkSection = $("#drink-results");
-    
+
     if (cocktail.drinks === null) {
         // display no results
         noResults();
     } else {
-        
+
         // create a loop to go through the array and return drinks
         for (var i = 0; i < 11; i++) {
-            
-            
+
+
             let drinkName = $("<li>").text(cocktail.drinks[i].strDrink);
             let drinkImg = $("<img>").attr('src', cocktail.drinks[i].strDrinkThumb);
             let drinkIns = $("<p>").text(cocktail.drinks[i].strInstructions);
@@ -96,7 +97,7 @@ function displayDrinkList(cocktail) {
                     // check if any of the measurements are null or empty
                     if (cocktail.drinks[i][`strMeasure${k}`] === null) {
                         drinkData = $("<li>").text(cocktail.drinks[i][`strIngredient${k}`])
-                        
+
                     } else {
                         // retrieve the measurement and ingredients
                         drinkData = $("<li>").text(cocktail.drinks[i][`strMeasure${k}`] + ' : ' + cocktail.drinks[i][`strIngredient${k}`])
