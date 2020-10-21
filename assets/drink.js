@@ -3,6 +3,8 @@
 $("#find-drink").click(function (event) {
     event.preventDefault();
 
+    // empty the modal before new results are attached
+    $("#drink-results").empty();
 
     // if searching by liquor type, retrieve text from input field
     var liquorSearchEl = $("#liquor-search").val().trim();
@@ -43,18 +45,18 @@ $("#find-drink").click(function (event) {
                             console.log(tenRandomDrink);
                             //displayDrinkList(data);
                         })
-                }
-            });
-    } else if (nameString) {
-
-        // fetch data by drink name
-        fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + nameString)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                displayDrinkList(data);
-            });
+                    }
+                });
+            } else if (nameString) {
+                
+                // fetch data by drink name
+                fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + nameString)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    displayDrinkList(data);
+                });
 
     } else {
 
@@ -70,14 +72,17 @@ $("#find-drink").click(function (event) {
 
 // function to display drinks in modal
 function displayDrinkList(cocktail) {
-
+    let drinkSection = $("#drink-results");
+    
     if (cocktail.drinks === null) {
         // display no results
         noResults();
     } else {
+        
         // create a loop to go through the array and return drinks
         for (var i = 0; i < 11; i++) {
-            let drinkSection = $("#drink-results");
+            
+            
             let drinkName = $("<li>").text(cocktail.drinks[i].strDrink);
             let drinkImg = $("<img>").attr('src', cocktail.drinks[i].strDrinkThumb);
             let drinkIns = $("<p>").text(cocktail.drinks[i].strInstructions);
@@ -91,7 +96,7 @@ function displayDrinkList(cocktail) {
                     // check if any of the measurements are null or empty
                     if (cocktail.drinks[i][`strMeasure${k}`] === null) {
                         drinkData = $("<li>").text(cocktail.drinks[i][`strIngredient${k}`])
-    
+                        
                     } else {
                         // retrieve the measurement and ingredients
                         drinkData = $("<li>").text(cocktail.drinks[i][`strMeasure${k}`] + ' : ' + cocktail.drinks[i][`strIngredient${k}`])
@@ -101,7 +106,7 @@ function displayDrinkList(cocktail) {
                 }
             }
 
-    }
+        }
 
     }
 };
