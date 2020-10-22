@@ -85,6 +85,7 @@ img {
 .btn {
     background-color: #BC0808;
     border: none;
+    border-radius: 0%;
     color: white;
     padding: 5px 8px;
     text-align: center;
