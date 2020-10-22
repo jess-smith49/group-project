@@ -18,7 +18,7 @@ $("#find-recipe").click(function (event) {
 		.then(function (response) {
 			for (var i = 0; i < 11; i++) {
 				let recipeId = response.results[i].id;
-				fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=2f81e89ecfed45b184b782b656464a48&query=${recipeId}&showIngredients=true`)
+				fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=2f81e89ecfed45b184b782b656464a48${recipeId}&showIngredients=true`)
 					.then(function (response) {
 						return response.json();
 					})
@@ -48,12 +48,12 @@ $("#find-recipe").click(function (event) {
 		$("#ingredient-search").val("");
 	});
 
-function displayRecipeList(results) {
+function displayRecipeList(response) {
 	console.log(results)
 	for (var i = 0; i < 11; i++) {
 		let recipeSection = $("#recipe-results");
-		let recipeName = results[i].title;
-		let recipeImg = results[i].image;
+		let recipeName = response.results[i].title;
+		let recipeImg = response.results[i].image;
 
 		let recipeCard = `<div class="container-fluid" id="card${i}">
 			<div class="row">
@@ -98,7 +98,7 @@ $(".saveBtn").click(function (event) {
 	localStorage.setItem("stored-recipes", allSavedRecipes);
 	//renderCards();
 
-})
+});
 
 /*function renderCards() {
 	//get Item for mlocal storage
