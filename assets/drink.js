@@ -90,7 +90,7 @@ function displayDrinkList(cocktail) {
         };
     }
     // append to modal
-    let insCard = `<div class="container-fluid">
+    let insCard = `<div class="container-fluid" id="card${i}">
     <div class="row">
     <div class="col-12 mt-3">
     <div class="card">
@@ -102,7 +102,9 @@ function displayDrinkList(cocktail) {
     <div class="card-title">${drinkName}</div>
     <p class="card-text">${drinkData}</p>
     <p class="card-text">${drinkIns}</p>
-    <button id="saveBtn" type="submit">Click to Save</button>
+    </div>
+    <div class="modal-footer>
+    <button class="btn btn-secondary btn-sm saveBtn" id="${i}" type="submit">Click to Save</button>
     </div>
     </div>
     </div>
@@ -116,100 +118,24 @@ function displayDrinkList(cocktail) {
 
 
 
-//     //}
-
-
-
-//      // drinkSection.append(insCard);
-//     //  drinkSection.append(
-//     //         $('<div/>', { 'class': 'container-fluid' }).append(
-//     //             $('<div/>', { 'class': 'row' }).append(
-//     //                 $('<div/>', { 'class': 'col-12 mt-3' }).append(
-//     //                     $('<div/>', { 'class': 'card' }).append(
-//     //                         $('<div/', { 'class': 'card-horizontal' }).append(
-//     //                             $('<div/>', { 'class': 'img-square-wrapper' }).append(
-//     //                                 $("<img>").attr('src', cocktail.drinks[i].strDrinkThumb, 'class', 'card-img').append
-//     //                             ).append(
-//     //                             $('<div/>', { 'class': 'card-body' }).append(
-//     //                                 $('<div/>', { 'class': 'card-title' }).append(
-//     //                                     $("<li>").text(cocktail.drinks[i].strDrink)
-//     //                                 ).append(
-//     //                                 $('<div/>', { 'class': 'card-text' }).append(
-//     //                                     $("<p>").text(cocktail.drinks[i].strInstructions)
-//     //                                 )
-//     //                             )
-//     //                         )
-//     //                     )
-//     //                 )
-//     //             )  
-//     //         )
-//     //     )
-//     //  )
-//     //  )
-//         //call drink selection and assign card deck class
-// // var drinkSection = document.querySelector("#drink-results");
-//  drinkSection.classList.add("card-group", "container-fluid");
-
-// //get drink title
-// var drinkName = document.createElement("li");
-// drinkName.classList.add("card-title")
-// drinkName.textContent = cocktail.drinks[i].strDrink;
-// //get drink image
-// var drinkImg = document.createElement("img");
-// drinkImg.classList.add("img-square-wrapper");
-// drinkImg.setAttribute("src" , cocktail.drinks[i].strDrinkThumb);
-// //get drink instructions
-// var drinkIns = document.createElement("p");
-// drinkIns.classList.add("card-text")
-// drinkIns.textContent = cocktail.drinks[i].strInstructions;
-// //create div elements to hold and style drink recipe cards
-// var cardEl = document.createElement("div");
-// cardEl.classList.add("card");
-
-// var cardBodyEl = document.createElement("div");
-// cardBodyEl.classList.add("card-body");
-
-// var cardSizeEl = document.createElement("div");
-// cardSizeEl.classList.add("col-12", "mt-3");
-
-// var horiCardEl = document.createElement("div");
-// horiCardEl.classList.add("card-horizontal");
-
-// var rowEl = document.createElement("div");
-// rowEl.classList.add("row");
-
-// var imgSizeEl = document.createElement("div");
-// imgSizeEl.classList.add("col-md-4");
-
-// //append elements to the drink results section
-
-// rowEl.appendChild(cardSizeEl);
-// cardSizeEl.appendChild(cardEl);
-// cardSizeEl.appendChild(drinkName);
-// cardSizeEl.appendChild(drinkIns);
-// cardEl.appendChild(horiCardEl);
-
-// horiCardEl.appendChild(imgSizeEl);
-// imgSizeEl.appendChild(drinkImg);
-
-// horiCardEl.appendChild(cardBodyEl);
-
-// drinkSection.appendChild(rowEl);*/
-
-
-//         //finish appending proper divs inside of other divs--figure out proper order.
-//         //add save button to each card 
 
 
 
 
+/*$(".saveBtn").click(function(event){
+    var allSavedDrinks = [];
+    var storedDrinks = JSON.parse(localStorage.getItem("stored-drinks"));
 
+    if(storedDrinks != null){
+        allSavedDrinks = storedDrinks
+    }
+    var savedDrinksId = this.attr("id");
+    var savedDrinks = $(`#card${storedDrinksId}`);
 
+    $("saved-results").append(savedDrinks);
 
+    allSavedDrinks.push(savedDrinks);
 
-
-
-$("#drink-list").click(function(event){
-    
-})
+    localStorage.setItem("stored-drinks", allSavedDrinks);
+})*/
 

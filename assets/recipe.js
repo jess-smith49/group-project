@@ -1,4 +1,4 @@
-renderCards();
+//renderCards();
 //SEARCH FUNCTION
 $("#find-recipe").click(function (event) {
 	console.log("clicked");
@@ -91,22 +91,22 @@ $(".saveBtn").click(function (event) {
 	//pointin to whole recipe card
 	var savedCard = $(`#card${savedCardId}`);
 	//append to page
-	//$("#saved-results").append(savedCard);
+	$("#saved-results").append(savedCard);
 	//add saved card to array
 	allSavedRecipes.push(savedCard);
 
 	localStorage.setItem("stored-recipes", allSavedRecipes);
-	renderCards();
+	//renderCards();
 
 });
 
-function renderCards() {
+/*function renderCards() {
 	//get Item for mlocal storage
 	//clear anything thats in there
 	//loop through - for each card display
 	//line 70 to append
 
-}
+}*/
 
 
 
