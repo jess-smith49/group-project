@@ -46,18 +46,11 @@ $("#find-drink").click(function (event) {
                 displayDrinkList(data);
             });
 
-<<<<<<< HEAD
-    } else {
-
-        // display no results if nothing was entered
-        noResults();
-=======
         // reset input field
 
     } else {
         // display a message to user that there is no result and run a new search
         console.log("no results")
->>>>>>> feature/recipe-return
     }
 
     // clear out the text input field
@@ -68,40 +61,6 @@ $("#find-drink").click(function (event) {
 
 // function to display drinks in modal
 function displayDrinkList(cocktail) {
-<<<<<<< HEAD
-    let drinkSection = $("#drink-results");
-
-    if (cocktail.drinks === null) {
-        // display no results
-        noResults();
-    } else {
-
-        // create a loop to go through the array and return drinks
-        for (var i = 0; i < 11; i++) {
-
-
-            let drinkName = $("<li>").text(cocktail.drinks[i].strDrink);
-            let drinkImg = $("<img>").attr('src', cocktail.drinks[i].strDrinkThumb);
-            let drinkIns = $("<p>").text(cocktail.drinks[i].strInstructions);
-            drinkSection.append(drinkName, drinkImg);
-            // create a loop to go through and return the list of ingredients
-            for (var k = 1; k < 16; k++) {
-                // check if any of the ingredients are null or empty
-                if (cocktail.drinks[i][`strIngredient${k}`] === null || cocktail.drinks[i][`strIngredient${k}`] === "") {
-                    break;
-                } else {
-                    // check if any of the measurements are null or empty
-                    if (cocktail.drinks[i][`strMeasure${k}`] === null) {
-                        drinkData = $("<li>").text(cocktail.drinks[i][`strIngredient${k}`])
-
-                    } else {
-                        // retrieve the measurement and ingredients
-                        drinkData = $("<li>").text(cocktail.drinks[i][`strMeasure${k}`] + ' : ' + cocktail.drinks[i][`strIngredient${k}`])
-                    }
-                    // append to modal
-                    drinkSection.append(drinkData, drinkIns);
-                }
-=======
     console.log(cocktail);
     // create a loop to go through the array and return up to 10 drinks
     let drinkSection = $("#drink-results");
@@ -129,7 +88,6 @@ function displayDrinkList(cocktail) {
                 // retrieve the measurement and ingredients
                 drinkData = cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`]
                 //   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
->>>>>>> feature/recipe-return
             }
         };
     }
