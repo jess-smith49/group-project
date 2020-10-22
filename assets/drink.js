@@ -92,6 +92,7 @@ function displayDrinkList(cocktail) {
         };
     }
     
+
     // append to modal
     let insCard = `<div class="container-fluid" id="${k}">
     <div class="row">
@@ -106,7 +107,7 @@ function displayDrinkList(cocktail) {
     <p class="card-text">${drinkData}</p>
     <p class="card-text">${drinkIns}</p>
     </div>
-    <button class="btn" id="${k}" type="submit">Click to Save</button>
+    <button class="btn save-drink" id="${k}" type="submit">Click to Save</button>
     </div>
     </div>
     </div>
@@ -114,18 +115,16 @@ function displayDrinkList(cocktail) {
     </div>
     </div>`
     drinkSection.append(insCard);
-
-
-
+    
 // if there are no results
-function noResults() {
+/*function noResults() {
     $("#drink-results").html('<p>No Results</p>');
-}
-
+}*/
 
 };
 
-/*$(".saveBtn").click(function(event){
+//have to get button class from insCard
+$(".save-drink").click(function(event){
     var allSavedDrinks = [];
     var storedDrinks = JSON.parse(localStorage.getItem("stored-drinks"));
 
@@ -140,5 +139,5 @@ function noResults() {
     allSavedDrinks.push(savedDrinks);
 
     localStorage.setItem("stored-drinks", allSavedDrinks);
-})*/
+})
 

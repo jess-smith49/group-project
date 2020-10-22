@@ -29,7 +29,7 @@ $("#find-recipe").click(function (event) {
 			}
 		});
 
-		var ingredientSearchEl = $("#ingredient-search").val().trim();
+		/*var ingredientSearchEl = $("#ingredient-search").val().trim();
 		console.log(ingredientSearchEl);
 
 		if (ingredientSearchEl) {
@@ -41,7 +41,7 @@ $("#find-recipe").click(function (event) {
                 displayRecipeList(data);
             });
 
-		}
+		}*/
 		
 		//clear content out after search
 		$("#query-search").val("");
@@ -79,7 +79,7 @@ function displayRecipeList(response) {
 	}
 }
 
-$(".saveBtn").click(function (event) {
+$('.saveBtn').click(function (event) {
 	var allSavedRecipes = [];
 	var storedRecipes = JSON.parse(localStorage.getItem("stored-recipes"));
 	if (storedRecipes != null) {
