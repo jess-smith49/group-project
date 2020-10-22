@@ -19,7 +19,11 @@ header {
 }
 
 body {
-    background-color: var(--secondary);
+    background-image: url(./images/food-bkg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 .container {
@@ -32,21 +36,21 @@ body {
 }
 /*RECIPE AND DRINK BACKGROUND IMAGES*/
 .recipe-bg {
-    background-image: url("./images/recipe.jpg");
+    /* background-image: url("./images/recipe.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: relative; */
     padding: 150px;
 
 }
 
 .drink-bg {
-    background-image: url("./images/cocktail.png");
+    /* background-image: url("./images/cocktail.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: relative; */
     padding: 150px;
 }
 
