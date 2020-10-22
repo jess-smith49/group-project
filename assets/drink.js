@@ -91,8 +91,9 @@ function displayDrinkList(cocktail) {
             }
         };
     }
+    //id="card${i}
     // append to modal
-    let insCard = `<div class="container-fluid" id="card${i}">
+    let insCard = `<div class="container-fluid"">
     <div class="row">
     <div class="col-12 mt-3">
     <div class="card">
@@ -115,11 +116,6 @@ function displayDrinkList(cocktail) {
     </div>`
     drinkSection.append(insCard);
 
-<<<<<<< HEAD
-}
-=======
-
->>>>>>> feature/recipe-return
 
 
 // if there are no results
@@ -128,7 +124,7 @@ function noResults() {
 }
 
 
-
+};
 
 /*$(".saveBtn").click(function(event){
     var allSavedDrinks = [];
