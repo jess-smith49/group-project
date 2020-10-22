@@ -83,6 +83,22 @@ img {
     text-align: center;
 }
 #saveBtn {
-    width: 40px;
-    border-radius: 0%;
+    background-color: #BC0808;
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 13px;
+}
+
+#saveBtn:hover {
+    background-color: #800707  ;
+    box-shadow: 5px rgb(147, 147, 153);
+    font-size: 15px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }

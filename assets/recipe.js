@@ -1,82 +1,114 @@
-//console.dir(window.document);
-
-//Request and Response-Functioning (example search pasta & max fat)
-
-var recipeNameEl = "recipe-results"
-
-fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=5e85b9e168244c1cbbe7ed190aca128b")
-
-.then(response => response.json())
-
-//.then(data => console.log(data)); {
-
-//for (var i = 0; i < 11; i ++) {
-	//let title = data.results.title[i];
-	//let image = data.results.image[i];
-	//console.log(title, image);
-//}
-	//displayRecipeList(data);
-
-//};
-
-
-// DONE - Used bootstrap in HTML.   Click event for when "Click here to begin" button is selected-
-
+//renderCards();
 //SEARCH FUNCTION
-$("#find-recipe").click(function(event){
-    console.log("clicked");
+$("#find-recipe").click(function (event) {
+	console.log("clicked");
 
-    event.preventDefault();
+	event.preventDefault();
 
-    //getting text from ingredient input
-    var ingredientSearchEl = $("#ingredient-search").val().trim();
-
-    //fetch by ingredient, DELIMIMED BY A COMMA!!!
-    fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=5e85b9e168244c1cbbe7ed190aca128b" + ingredientSearchEl)
-        .then(function(response){
-            return response.json();
-        })
-        //need to get array and run search
+	//getting text from query input
+	var recipeNameEl = $("#query-search").val().trim();
 
 
+	//fetch by meal aname, DELIMIMED BY A COMMA!!!
+	fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=2f81e89ecfed45b184b782b656464a48&query=${recipeNameEl}&showIngredients=true`)
+		.then(function (response) {
+			return response.json();
+		})
+		//retreive recipe ID and run search by ID
+		.then(function (response) {
+			for (var i = 0; i < 11; i++) {
+				let recipeId = response.results[i].id;
+				fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=2f81e89ecfed45b184b782b656464a48${recipeId}&showIngredients=true`)
+					.then(function (response) {
+						return response.json();
+					})
+					.then(function (data) {
+						console.log(data)
+						displayRecipeList(data);
+					})
+			}
+		});
+
+		var ingredientSearchEl = $("#ingredient-search").val().trim();
+		console.log(ingredientSearchEl);
+
+		if (ingredientSearchEl) {
+			fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=2f81e89ecfed45b184b782b656464a48&query=${ingredientSearchEl}&showIngredients=true`)
+			.then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                displayRecipeList(data);
+            });
+
+		}
+		
+		//clear content out after search
+		$("#query-search").val("");
+		$("#ingredient-search").val("");
+	});
+
+function displayRecipeList(response) {
+	console.log(results)
+	for (var i = 0; i < 11; i++) {
+		let recipeSection = $("#recipe-results");
+		let recipeName = response.results[i].title;
+		let recipeImg = response.results[i].image;
+
+		let recipeCard = `<div class="container-fluid" id="card${i}">
+			<div class="row">
+    		<div class="col-12 mt-3">
+			<div class="card">
+			<div class="card-horizontal">
+			<div class="img-square-wrapper">
+			<img class="card-img" src= ${recipeImg}>
+			</div>
+			<div class="card-body">
+			<div class="card-title">${recipeName}</div>
+			</div>
+			<div class="card-footer>
+			<button class="btn btn-secondary btn-sm saveBtn" id="${i}" type="submit">Click to Save</button>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>`
+		recipeSection.append(recipeCard);
+
+	}
+}
+
+$(".saveBtn").click(function (event) {
+	var allSavedRecipes = [];
+	var storedRecipes = JSON.parse(localStorage.getItem("stored-recipes"));
+	if (storedRecipes != null) {
+		allSavedRecipes = storedRecipes
+	}
+
+	//getting the exact ID
+	var savedCardId = this.attr("id");
+	//pointin to whole recipe card
+	var savedCard = $(`#card${savedCardId}`);
+	//append to page
+	$("#saved-results").append(savedCard);
+	//add saved card to array
+	allSavedRecipes.push(savedCard);
+
+	localStorage.setItem("stored-recipes", allSavedRecipes);
+	//renderCards();
+
+});
+
+/*function renderCards() {
+	//get Item for mlocal storage
+	//clear anything thats in there
+	//loop through - for each card display
+	//line 70 to append
+
+}*/
 
 
-    //getting text from name of recipe input 
-    var recipeNameEl = $("#query-search").val().trim();
-
-
-    //clear content out after search
-    $("#ingredient-search").val("");
-    $("#query-search").val("");
-})
-////DONE - Used bootstrap in HTML.  Upon click, modal will open with two text entry boxes and a search button
-	// Modal opens with heading "Search Here for a Recipe"
-
-//Search by ingredient Search Box
-	// clear search box after click event
-	//highlight box if search data entered
-	//account for invalid data entry
-
-//Search by cusine type Search Box
-	// clear search box after click event
-	//highlight box if search data entered
-	//account for invalid data entry
-
-//Search button - Click event
-//Do we need a second search button.  If yes, will cut down on a lot of if/then.  Currently, if we use one search button and user enters text into both boxes it will search for both.  We could also throw an error - enter information in one box only.
-
-//Return 10 items.  Name of recipe, thumbnail and ingredient list/instructions
-  //Second Modal????  New window????
-
-
-
-
-  //event.preventDefault();
-
-	// .then(function(data)
-	// 	console.log(data)
-	
-	// })
 
 
 
@@ -86,12 +118,6 @@ $("#find-recipe").click(function(event){
 
 
 
-
-
-//document.querySelector("#recipe-results").innerHTML = "Recipe Name: " + data.results[0].title
-
-
-// &query=pasta&maxFat=25&
 
 
 
