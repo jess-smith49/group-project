@@ -115,6 +115,8 @@ function displayDrinkList(cocktail) {
     </div>
     </div>`
     drinkSection.append(insCard);
+
+    createSaveClick();
     
 // if there are no results
 /*function noResults() {
@@ -122,9 +124,11 @@ function displayDrinkList(cocktail) {
 }*/
 
 };
-
+function createSaveClick (){
 //have to get button class from insCard
-$(".save-drink").click(function(event){
+$("#save-drink").click(function(event){
+    
+    console.log("clicked");
     var allSavedDrinks = [];
     var storedDrinks = JSON.parse(localStorage.getItem("stored-drinks"));
 
@@ -132,12 +136,12 @@ $(".save-drink").click(function(event){
         allSavedDrinks = storedDrinks
     }
     var savedDrinksId = this.attr("id");
-    var savedDrinks = $(`#card${storedDrinksId}`);
+    var savedDrinks = $(`#card${savedDrinksId}`);
 
     $("saved-results").append(savedDrinks);
 
     allSavedDrinks.push(savedDrinks);
 
-    localStorage.setItem("stored-drinks", allSavedDrinks);
-})
-
+    localStorage.setItem("stored-drinks", JSON.stringify(allSavedDrinks));
+    })
+};
