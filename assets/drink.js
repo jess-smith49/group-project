@@ -88,9 +88,10 @@ function displayDrinkList(cocktail) {
                 //   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
             }
         };
+
     }
     // append to modal
-    let insCard = `<div class="container-fluid" id="card${i}">
+    let insCard = `<div class="container-fluid" id="card${k}>
     <div class="row">
     <div class="col-12 mt-3">
     <div class="card">
@@ -104,7 +105,7 @@ function displayDrinkList(cocktail) {
     <p class="card-text">${drinkIns}</p>
     </div>
     <div class="modal-footer>
-    <button class="btn btn-secondary btn-sm saveBtn" id="${i}" type="submit">Click to Save</button>
+    <button class="btn btn-secondary btn-sm drinkBtn" id="${k}" type="submit">Click to Save</button>
     </div>
     </div>
     </div>
@@ -115,27 +116,22 @@ function displayDrinkList(cocktail) {
         
     }
 
-
-
-
-
-
-
-
-/*$(".saveBtn").click(function(event){
+$(".drinkBtn").click(function(event){
     var allSavedDrinks = [];
-    var storedDrinks = JSON.parse(localStorage.getItem("stored-drinks"));
+    //var storedDrinks = JSON.parse(localStorage.getItem("stored-drinks"));
 
     if(storedDrinks != null){
         allSavedDrinks = storedDrinks
     }
+    //getting the card ID
     var savedDrinksId = this.attr("id");
+    //pointin to the entire recipe card
     var savedDrinks = $(`#card${storedDrinksId}`);
+    //append it to page
+    $("#saved-results").append(savedDrinks);
 
-    $("saved-results").append(savedDrinks);
-
-    allSavedDrinks.push(savedDrinks);
-
-    localStorage.setItem("stored-drinks", allSavedDrinks);
-})*/
+    //allSavedDrinks.push(savedDrinks);
+    console.log("clicked");
+    //localStorage.setItem("stored-drinks", allSavedDrinks);
+});
 
