@@ -90,7 +90,8 @@ function displayDrinkList(cocktail) {
         };
     }
     // append to modal
-    let insCard = `<div class="container-fluid" id="card${i}">
+    //id="card${i}
+    let insCard = `<div class="container-fluid" ">
     <div class="row">
     <div class="col-12 mt-3">
     <div class="card">
@@ -103,9 +104,7 @@ function displayDrinkList(cocktail) {
     <p class="card-text">${drinkData}</p>
     <p class="card-text">${drinkIns}</p>
     </div>
-    <div class="modal-footer>
-    <button class="btn btn-secondary btn-sm saveBtn" id="${i}" type="submit">Click to Save</button>
-    </div>
+    <button type="submit" id="saveBtn"S>Click to Save</button>
     </div>
     </div>
     </div>
