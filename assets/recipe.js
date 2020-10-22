@@ -67,19 +67,22 @@ function displayRecipeList(response) {
 			<div class="card-title">${recipeName}</div>
 			</div>
 			<div class="card-footer>
-			<button class="btn btn-secondary btn-sm saveBtn" id="${i}" type="submit">Click to Save</button>
+			<button class="btn btn-secondary btn-sm saveRecipe" id="${i}" type="submit">Click to Save</button>
 			</div>
 			</div>
 			</div>
 			</div>
 			</div>
 			</div>`
-		recipeSection.append(recipeCard);
+        recipeSection.append(recipeCard);
+        
+        createSaveClick();
 
 	}
 }
 
-$('.saveBtn').click(function (event) {
+function createSaveClick(){
+$('.saveRecipe').click(function (event) {
 	var allSavedRecipes = [];
 	var storedRecipes = JSON.parse(localStorage.getItem("stored-recipes"));
 	if (storedRecipes != null) {
@@ -98,8 +101,8 @@ $('.saveBtn').click(function (event) {
 	localStorage.setItem("stored-recipes", allSavedRecipes);
 	//renderCards();
 
-});
-
+    });
+}
 /*function renderCards() {
 	//get Item for mlocal storage
 	//clear anything thats in there

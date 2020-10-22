@@ -124,9 +124,10 @@ function displayDrinkList(cocktail) {
 }*/
 
 };
+
 function createSaveClick (){
 //have to get button class from insCard
-$("#save-drink").click(function(event){
+$(".save-drink").click(function(event){
     
     console.log("clicked");
     var allSavedDrinks = [];
@@ -144,4 +145,5 @@ $("#save-drink").click(function(event){
 
     localStorage.setItem("stored-drinks", JSON.stringify(allSavedDrinks));
     })
+    
 };
