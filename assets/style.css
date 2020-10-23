@@ -12,11 +12,11 @@
     --tertiary: white;
     
 }
-header {
+/* header {
     text-align: center;
     background-color: var(--primary);
     border-style: solid;
-}
+} */
 
 body {
     background-image: url(./images/new-foodbkg.jpg);
