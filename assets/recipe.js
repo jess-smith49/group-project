@@ -54,6 +54,25 @@ function displayRecipes (recipe){
     let recipeName = recipe.meals[0].strMeal;
 	let recipeImg = recipe.meals[0].strMealThumb;
 	let recipeIns = recipe.meals[0].strInstructions;
+
+	for (var k = 1; k < 16; k++) {
+        // check if any of the ingredients are null or empty
+        if (recipe.meals[0][`strIngredient${k}`] === null || recipe.meals[0][`strIngredient${k}`] === "") {
+            break;
+        } else {
+            // check if any of the measurements are null or empty
+            if (recipe.meals[0][`strMeasure${k}`] === null) {
+                drinkData = recipe.meals[0][`strIngredient${k}`]
+                //drinkData = $("<li>").text(cocktail.drinks[0][`strIngredient${k}`])
+
+                
+            } else {
+                // retrieve the measurement and ingredients
+                recipeData = recipe.meals[0][`strMeasure${k}`] + ' : ' + recipe.meals[0][`strIngredient${k}`]
+                //   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
+            }
+        };
+    }
 	
 	//creating card for recipe section
     let recipeCard = 
@@ -68,6 +87,7 @@ function displayRecipes (recipe){
     <div class="card-body">
     <div class="card-title">${recipeName}</div>
 	</div>
+	<div class="card-ingrdnt">${recipeData}</div>
 	<div class="card-instructions">${recipeIns}</div>
     <button class="btn save-recipe" type="submit">Click to Save</button>
     </div>
