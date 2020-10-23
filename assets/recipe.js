@@ -69,7 +69,8 @@ function displayRecipes (recipe){
             } else {
                 // retrieve the measurement and ingredients
                 recipeData = recipe.meals[0][`strMeasure${k}`] + ' : ' + recipe.meals[0][`strIngredient${k}`]
-                //   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
+				//   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
+				console.log(recipeData);
             }
         };
     }
