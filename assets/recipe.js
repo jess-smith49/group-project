@@ -1,13 +1,12 @@
 //search function
 $("#find-recipe").click(function(event){
     event.preventDefault();
-
+	//empty modal before new search
     $("#recipe-results").empty();
     //get text from query input
     var recipeNameEl = $("#query-search").val().trim();
 
-    //fetch by meal name
-  
+	//fetch by meal name
     fetch(
         `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeNameEl}`
         //`https://api.spoonacular.com/recipes/complexSearch?apiKey=2f81e89ecfed45b184b782b656464a48&query=${recipeNameEl}&addRecipeInformation=true&fillIngredients=true`
@@ -17,7 +16,8 @@ $("#find-recipe").click(function(event){
         return response.json();
     })
     .then(function(response){
-        
+		
+		//getting recipe id and searching by the id
          for(var k = 0; k < 11; k++){
              let recipeId = response.meals[k].idMeal;
 
@@ -49,11 +49,12 @@ $("#find-recipe").click(function(event){
 function displayRecipes (recipe){
     console.log(recipe);
     
-
+	//declaring the variables to the data
     let recipeSection = $("#recipe-results");
     let recipeName = recipe.meals[0].strMeal;
     let recipeImg = recipe.meals[0].strMealThumb;
-    
+	
+	//creating card for recipe section
     let recipeCard = 
     `<div class="container-fluid">
     <div class="row">
