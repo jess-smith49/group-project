@@ -8,8 +8,7 @@ $("#find-recipe").click(function (event) {
 	//getting text from query input
 	var recipeNameEl = $("#query-search").val().trim();
 
-
-	//fetch by meal aname, DELIMIMED BY A COMMA!!!
+	///fetch by meal aname, DELIMIMED BY A COMMA!!!
 	fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=2f81e89ecfed45b184b782b656464a48&query=${recipeNameEl}&showIngredients=true`)
 		.then(function (response) {
 			return response.json();
@@ -29,7 +28,7 @@ $("#find-recipe").click(function (event) {
 			}
 		});
 
-		/*var ingredientSearchEl = $("#ingredient-search").val().trim();
+		var ingredientSearchEl = $("#ingredient-search").val().trim();
 		console.log(ingredientSearchEl);
 
 		if (ingredientSearchEl) {
@@ -41,7 +40,7 @@ $("#find-recipe").click(function (event) {
                 displayRecipeList(data);
             });
 
-		}*/
+		}
 		
 		//clear content out after search
 		$("#query-search").val("");

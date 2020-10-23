@@ -92,7 +92,7 @@ function displayDrinkList(cocktail) {
         };
     }
     
-
+    
     // append to modal
     let insCard = `<div class="container-fluid" id="${k}">
     <div class="row">
@@ -117,7 +117,7 @@ function displayDrinkList(cocktail) {
     drinkSection.append(insCard);
 
     createSaveClick();
-    
+   
 // if there are no results
 /*function noResults() {
     $("#drink-results").html('<p>No Results</p>');
@@ -136,7 +136,7 @@ $(".save-drink").click(function(event){
     if(storedDrinks != null){
         allSavedDrinks = storedDrinks
     }
-    var savedDrinksId = this.attr("id");
+    var savedDrinksId = $(this).attr("id");
     var savedDrinks = $(`#card${savedDrinksId}`);
 
     $("saved-results").append(savedDrinks);
