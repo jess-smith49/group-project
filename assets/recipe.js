@@ -52,7 +52,8 @@ function displayRecipes (recipe){
 	//declaring the variables to the data
     let recipeSection = $("#recipe-results");
     let recipeName = recipe.meals[0].strMeal;
-    let recipeImg = recipe.meals[0].strMealThumb;
+	let recipeImg = recipe.meals[0].strMealThumb;
+	let recipeIns = recipe.meals[0].strInstructions;
 	
 	//creating card for recipe section
     let recipeCard = 
@@ -66,7 +67,8 @@ function displayRecipes (recipe){
     </div>
     <div class="card-body">
     <div class="card-title">${recipeName}</div>
-    </div>
+	</div>
+	<div class="card-instructions">${recipeIns}</div>
     <button class="btn save-recipe" type="submit">Click to Save</button>
     </div>
     </div>
