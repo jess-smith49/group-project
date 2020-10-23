@@ -33,20 +33,24 @@ body {
 /*RECIPE AND DRINK BACKGROUND IMAGES*/
 .recipe-bg {
     background-image: url("./images/recipe.jpg");
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+
     padding: 150px;
 
 }
 
 .drink-bg {
     background-image: url("./images/cocktail.png");
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+
     padding: 150px;
 }
 
@@ -85,6 +89,7 @@ img {
 .btn {
     background-color: #BC0808;
     border: none;
+    border-radius: 0%;
     color: white;
     padding: 5px 8px;
     text-align: center;
