@@ -69,8 +69,8 @@ function displayDrinkList(cocktail) {
     console.log(cocktail);
     // create a loop to go through the array and return up to 10 drinks
     //let drinkSection = $("#drink-results");
-    var imgEl = $("#img-wrap");
-    var cardBodyEl = $("#drink-card-body");
+    //var imgEl = $("#img-wrap");
+    //var cardBodyEl = $("#drink-card-body");
     
     //for (var i = 0; i < 1; i++) {
     //let drinkName = $("<li>").text(cocktail.drinks[0].strDrink);
@@ -106,8 +106,8 @@ function displayDrinkList(cocktail) {
         };
     }
     
-    imgEl.append(drinkImg);
-    cardBodyEl.append(drinkName, drinkIns, drinkData);
+    $('#drink-img').append(drinkImg);
+    $('#drink-card-body').append(drinkName);
 
 };
     // append to modal
