@@ -51,26 +51,25 @@
           <h2>Search Here for a Recipe</h2>
         </div>
         <div class="modal-body">
-          <div class="container-fluid">
+          <div class="card">
+            <div class = "container-fluid">
             <form>
               <div class="form-group">
-                <label for="recipe-search">
-                  <ul>
-                    <li></li>
-                  </ul>
-                </label>
-                <label for="ingredient-search">Search by ingredients (separate ingredient with a comma):</label>
-                <br>
-                <input type="text" id="ingredient-search">
-                <br>
                 <label for="query-search">Search by name:</label>
                 <br>
                 <input type="text" id="query-search">
               </div>
               <button id="find-recipe">Search</button>
             </form>
+            </div>
           </div>
+          <div id = "recipe-search">
+          <ul id = "recipe-results">
+            <li></li>
+          </ul>
         </div>
+      </div>
+        <button type = "button" class = "btn btn-close" data-dismiss="modal">Close</button>
       </div>
     </div>
 
@@ -126,7 +125,7 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="./assets/drink.js"></script>
-  <script src="./assets/recipe.js"></script>
+  <script src="./assets/test.js"></script>
 </body>
 
 </html>

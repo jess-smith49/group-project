@@ -130,7 +130,7 @@ function createSaveClick (){
 $(".save-drink").click(function(event){
     
     console.log("clicked");
-    var allSavedDrinks = [];
+   /* var allSavedDrinks = [];
     var storedDrinks = JSON.parse(localStorage.getItem("stored-drinks"));
 
     if(storedDrinks != null){
@@ -143,7 +143,7 @@ $(".save-drink").click(function(event){
 
     allSavedDrinks.push(savedDrinks);
 
-    localStorage.setItem("stored-drinks", JSON.stringify(allSavedDrinks));
+    localStorage.setItem("stored-drinks", JSON.stringify(allSavedDrinks));*/
     })
     
 };
