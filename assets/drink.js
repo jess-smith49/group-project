@@ -1,7 +1,11 @@
 
-// event function when search button is clicked
+//hide empy cards until search button is clicked 
+$("#drink-search").hide()
+
+    // event function when search button is clicked
 $("#find-drink").click(function (event) {
     event.preventDefault();
+    //show drink cards
 
     // empty the modal before new results are attached
     $("#drink-results").empty();
@@ -45,31 +49,41 @@ $("#find-drink").click(function (event) {
             .then(function (data) {
                 displayDrinkList(data);
             });
+            
+            // reset input field
+            
+        } else {
+            // display a message to user that there is no result and run a new search
+            console.log("no results")
+        }
+        
+        // clear out the text input field
+        $("#liquor-search").val("");
+        $("#drinkName-search").val("");
+    });
 
-        // reset input field
-
-    } else {
-        // display a message to user that there is no result and run a new search
-        console.log("no results")
-    }
-
-    // clear out the text input field
-    $("#liquor-search").val("");
-    $("#drinkName-search").val("");
-
-});
 
 // function to display drinks in modal
 function displayDrinkList(cocktail) {
+    $("#drink-search").show();
     console.log(cocktail);
     // create a loop to go through the array and return up to 10 drinks
-    let drinkSection = $("#drink-results");
+    //let drinkSection = $("#drink-results");
+    var imgEl = $("#img-wrap");
+    var cardBodyEl = $("#drink-card-body");
+    
     //for (var i = 0; i < 1; i++) {
     //let drinkName = $("<li>").text(cocktail.drinks[0].strDrink);
-    let drinkName = cocktail.drinks[0].strDrink;
-    let drinkImg =  cocktail.drinks[0].strDrinkThumb;
-    //let drinkIns = $("<p>").text(cocktail.drinks[0].strInstructions);
-    let drinkIns = cocktail.drinks[0].strInstructions;
+    var drinkName = document.createElement("h4");
+        drinkName.classList.add("card-title");
+        drinkName.textContent = (cocktail.drinks[0].strDrink);
+    
+    var drinkImg = document.createElement("img");
+        drinkImg.setAttribute("src", cocktail.drinks[0].strDrinkThumb);
+    
+    var drinkIns = document.createElement("p")
+        drinkIns.classList.add("card-img")
+        drinkIns.textContent = (cocktail.drinks[0].strInstructions);
         //3
         
         // create a loop to go through and return the list of ingredients
@@ -80,40 +94,44 @@ function displayDrinkList(cocktail) {
         } else {
             // check if any of the measurements are null or empty
             if (cocktail.drinks[0][`strMeasure${k}`] === null) {
-                drinkData = cocktail.drinks[0][`strIngredient${k}`]
-                //drinkData = $("<li>").text(cocktail.drinks[0][`strIngredient${k}`])
+                //drinkData = cocktail.drinks[i][`strIngredient${k}`]
+                drinkData = $("<li>").text(cocktail.drinks[0][`strIngredient${k}`])
 
                 
             } else {
                 // retrieve the measurement and ingredients
-                drinkData = cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`]
-                //   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
+                //drinkData = cocktail.drinks[i][`strMeasure${k}`] + ' : ' + cocktail.drinks[i][`strIngredient${k}`]
+                drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
             }
         };
     }
     
+    imgEl.append(drinkImg);
+    cardBodyEl.append(drinkName, drinkIns, drinkData);
+
+};
     // append to modal
-    let insCard = `<div class="container-fluid" id="${k}">
-    <div class="row">
-    <div class="col-12 mt-3">
-    <div class="card">
-    <div class="card-horizontal">
-    <div class="img-square-wrapper">
-    <img class="card-img" src= ${drinkImg}>
-    </div>
-    <div class="card-body">
-    <div class="card-title">${drinkName}</div>
-    <p class="card-text">${drinkData}</p>
-    <p class="card-text">${drinkIns}</p>
-    </div>
-    <button class="btn" id="${k}" type="submit">Click to Save</button>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>`
-    drinkSection.append(insCard);
+    // let insCard = `<div class="container-fluid" id="${k}">
+    // <div class="row">
+    // <div class="col-12 mt-3">
+    // <div class="card">
+    // <div class="card-horizontal">
+    // <div class="img-square-wrapper">
+    // <img class="card-img" src= ${drinkImg}>
+    // </div>
+    // <div class="card-body">
+    // <div class="card-title">${drinkName}</div>
+    // <p class="card-text">${drinkData}</p>
+    // <p class="card-text">${drinkIns}</p>
+    // </div>
+    // <button class="btn" id="${k}" type="submit">Click to Save</button>
+    // </div>
+    // </div>
+    // </div>
+    // </div>
+    // </div>
+    // </div>`
+    // drinkSection.append(insCard);
 
 
 
@@ -123,7 +141,7 @@ function noResults() {
 }
 
 
-};
+
 
 /*$(".saveBtn").click(function(event){
     var allSavedDrinks = [];

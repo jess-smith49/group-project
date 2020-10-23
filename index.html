@@ -36,23 +36,23 @@
             begin!</button>
         </div>
         <div class="col-6 drink-bg">
-          <button class="drink-btn button" data-toggle="modal" data-target="#drink-modal">Click here to begin!</button>
+          <button class="drink-btn button" data-toggle="modal" data-target="#drink-modal" id="drink-modal-btn">Click here to begin!</button>
         </div>
       </div>
     </div>
   </div>
 
-    </hero>
-    <!--MODAL FOR RECIPE-->
-    <div id="recipe-modal" class="modal">
-      <!--modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Search Here for a Recipe</h2>
-        </div>
-        <div class="modal-body">
-          <div class="card">
-            <div class = "container-fluid">
+  </hero>
+  <!--MODAL FOR RECIPE-->
+  <div id="recipe-modal" class="modal">
+    <!--modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Search Here for a Recipe</h2>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="container-fluid">
             <form>
               <div class="form-group">
                 <label for="query-search">Search by name:</label>
@@ -61,28 +61,46 @@
               </div>
               <button id="find-recipe">Search</button>
             </form>
-            </div>
           </div>
-          <div id = "recipe-search">
-          <ul id = "recipe-results">
-            <li></li>
-          </ul>
         </div>
-      </div>
-        <button type = "button" class = "btn btn-close" data-dismiss="modal">Close</button>
+        <div id="recipe-search">
+          <ul id="recipe-results">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 mt-3">
+                  <div class="card">
+                    <div class="card-horizontal">
+                      <div class="img-square-wrapper" id="img-wrap">
+                        <!-- <img class="card-img"> -->
+                      </div>
+                      <div class="card-body" >
+                        <!-- <div class="card-title"></div> -->
+                      </div>
+                      <!-- <div class="card-instructions"></div> -->
+                      <button class="btn save-recipe" type="submit">Click to Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </ul>
       </div>
     </div>
+    <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+  </div>
+  </div>
 
-    <!--MODAL FOR DRINKS-->
-    <div id="drink-modal" class="modal">
-      <!--modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Search Here for a Cocktail</h2>
-        </div>
-        <div class="modal-body">
-          <div class="card">
-            <div class="container-fluid">
+  <!--MODAL FOR DRINKS-->
+  <div id="drink-modal" class="modal">
+    <!--modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Search Here for a Cocktail</h2>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="container-fluid">
             <form>
               <div class="form-group">
                 <label for="liquor-search">Search by type of liquor:</label>
@@ -97,14 +115,33 @@
             </form>
           </div>
         </div>
-          <div id="drink-search">
+        <div id="drink-search">
+          <div class="container-fluid" id="k">
             <ul id="drink-results">
-            </ul>
+              <li class="li">
+                <div class="row">
+                  <div class="col-12 mt-3">
+                    <div class="card">
+                      <div class="card-horizontal">
+                        <div class="img-square-wrapper">
+                          <img class="card-img" id="drink-img">
+                        </div>
+                        <div class="card-body" id="drink-card-bod">
+                        </div>
+                        <button class="btn" id="k" type="submit">Click to Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
           </div>
-          <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
         </div>
+        </li>
+        </ul>
       </div>
+      <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
     </div>
+  </div>
+  </div>
   </div>
 
   <!--Final Generated Product Section-->
