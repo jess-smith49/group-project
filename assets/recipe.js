@@ -55,9 +55,16 @@ function displayRecipes (recipe){
 	let recipeImg = recipe.meals[0].strMealThumb;
 	let recipeIns = recipe.meals[0].strInstructions;
 
+//for loop here for ingredient/measure array
+    let ingredArr= [];
+    let measureArr= [];
+
 	for (var k = 1; k < 16; k++) {
+
+        let ingredients = recipe.meals[0][`strIngredients${k}`];
+        let measurements = recipe.meals[0][`strMeasure${k}`];
         // check if any of the ingredients are null or empty
-        if (recipe.meals[0][`strIngredient${k}`] === null || recipe.meals[0][`strIngredient${k}`] === "") {
+        if (ingredients === null || ingredients === "") {
             break;
         } else {
             // check if any of the measurements are null or empty
@@ -67,8 +74,14 @@ function displayRecipes (recipe){
 
                 
             } else {
+                ingredArr.push(ingredients);
+                measureArr.push(measurements);
+                console.log("INGRED", ingredArr.toString());
+                console.log("MEASURE", measureArr.toString());
+
                 // retrieve the measurement and ingredients
-                recipeData = recipe.meals[0][`strMeasure${k}`] + ' : ' + recipe.meals[0][`strIngredient${k}`]
+                recipeData = measureArr + ":" + ingredArr;
+               // recipeData = recipe.meals[0][`strMeasure${k}`] + ' : ' + recipe.meals[0][`strIngredient${k}`]
 				//   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
 				console.log(recipeData);
             }
