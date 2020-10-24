@@ -86,8 +86,6 @@ function displayRecipes (recipe){
                     recipeData += measureArr[i] + ':' + ingredArr[i];
                 }
                  
-            
-               
                // recipeData = recipe.meals[0][`strMeasure${k}`] + ' : ' + recipe.meals[0][`strIngredient${k}`]
 				//   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
 				console.log(recipeData);
