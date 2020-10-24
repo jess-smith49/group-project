@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--ADDED BOOTSTRAP-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/secondarystyle.css">
   <title>The Menu</title>
 </head>
 
@@ -16,75 +16,72 @@
     <h1>The Menu</h1>
   </header>
 
-  <div class="hero">
+ <div class="hero">
     <h2>Welcome to your one-stop site for all things cooking and drinking</h2>
     <!--RECIPE GENERATOR AND DRINK SECTION-->
     <div class="container-fluid">
       <div class="row">
         <div class="col-6">
           <h2>FIND YOUR RECIPE</h2>
+          <div class="col-6 recipe-bg">
+            <button class="recipe-btn button" data-toggle="modal" data-target="#recipe-modal">Click here to
+              begin!</button>
+          </div>
         </div>
         <div class="col-6">
           <h2>FIND YOUR COCKTAIL</h2>
-        </div>
-      </div>
-      
-      
-      <div class="row">
-        <div class="col-6 recipe-bg">
-          <button class="recipe-btn button" data-toggle="modal" data-target="#recipe-modal">Click here to
-            begin!</button>
-          </div>
           <div class="col-6 drink-bg">
-            <button class="drink-btn button" data-toggle="modal" data-target="#drink-modal">Click here to begin!</button>
+            <button class="drink-btn button" data-toggle="modal" data-target="#drink-modal">Click here to
+              begin!</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-    
-    
-    <!--MODAL FOR RECIPE-->
-    <div id="recipe-modal" class="modal">
-      <!--modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Search Here for a Recipe</h2>
-        </div>
-        <div class="modal-body">
-          <div class="container-fluid">
-            <form>
-              <div class="form-group">
-                <label for="recipe-search">
-                  <ul>
-                    <li></li>
-                  </ul>
-                </label>
-                <label for="ingredient-search">Search by ingredients (separate ingredient with a comma):</label>
-                <br>
-                <input type="text" id="ingredient-search">
-                <br>
-                <label for="query-search">Search by name:</label>
-                <br>
-                <input type="text" id="query-search">
-              </div>
-              <button id="find-recipe">Search</button>
-            </form>
-          </div>
+</div>
+
+
+  <!--MODAL FOR RECIPE-->
+  <div id="recipe-modal" class="modal">
+    <!--modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Search Here for a Recipe</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <form>
+            <div class="form-group">
+              <label for="recipe-search">
+                <ul>
+                  <li></li>
+                </ul>
+              </label>
+              <label for="ingredient-search">Search by ingredients (separate ingredient with a comma):</label>
+              <br>
+              <input type="text" id="ingredient-search">
+              <br>
+              <label for="query-search">Search by name:</label>
+              <br>
+              <input type="text" id="query-search">
+            </div>
+            <button id="find-recipe">Search</button>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 
-    <!--MODAL FOR DRINKS-->
-    <div id="drink-modal" class="modal">
-      <!--modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Search Here for a Cocktail</h2>
-        </div>
-        <div class="modal-body">
-          <div class="card">
-            <div class="container-fluid">
+  <!--MODAL FOR DRINKS-->
+  <div id="drink-modal" class="modal">
+    <!--modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Search Here for a Cocktail</h2>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="container-fluid">
             <form>
               <div class="form-group">
                 <label for="liquor-search">Search by type of liquor:</label>
@@ -99,18 +96,18 @@
             </form>
           </div>
         </div>
-          <div id="drink-search">
-            <ul id="drink-results">
-            </ul>
-          </div>
-          <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
+        <div id="drink-search">
+          <ul id="drink-results">
+          </ul>
         </div>
+        <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+  </div>
 
   <!--Final Generated Product Section-->
-  <div>
+  <div class="saved-meals">
     <h2>Your Meals!</h2>
     <div class="saved-results">
       <p>You have no meals yet! Use the above to get started!</p>
@@ -122,12 +119,15 @@
     </div>
   </div>
 
-  <!--Footer-->
-  <footer></footer>
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="./assets/drink.js"></script>
   <script src="./assets/recipe.js"></script>
 </body>
+<!--Footer-->
+<footer>
+  <h5>Made by MMJS INC 2020</h5>
+</footer>
 
 </html>
