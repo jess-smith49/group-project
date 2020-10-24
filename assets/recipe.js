@@ -87,8 +87,8 @@ function displayRecipes (recipe){
     <div class="card-body">
     <div class="card-title">${recipeName}</div>
 	</div>
-	<div class="card-ingrdnt">${recipeData}</div>
-	<div class="card-instructions">${recipeIns}</div>
+	<div class="card-text">${recipeData}</div>
+	<div class="card-text">${recipeIns}</div>
     <button class="btn save-recipe" type="submit">Click to Save</button>
     </div>
     </div>
