@@ -3,8 +3,9 @@
 # Description
 
 Contributors:
-- Jessica Smith
-- Mai Yia Xion
+- Jessica Smith:
+    API research, HTML skeleton, minimal CSS, getting data for recipe file from API, recipe functionality, displaying recipe data in cards
+- Mai Yia Xiong
 - Maya Santiago
 - Sheila Stapleton
 
