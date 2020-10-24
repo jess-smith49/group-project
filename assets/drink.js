@@ -16,7 +16,7 @@ $("#find-drink").click(function (event) {
         })
         // retrieve cocktail ID and run search by ID
         .then(function (response) {
-            for (var i = 0; i < 11; i++) {
+            for (var i = 0; i < 3; i++) {
                 let drinkId = response.drinks[i].idDrink;
                 //console.log(drinkId)
                 fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`)
@@ -123,7 +123,6 @@ function displayDrinkList(cocktail) {
     </div>
     <p class="card-text">${drinkIns}</p>
     </div>
-    <button class="btn" id="${k}" type="submit">Click to Save</button>
     </div>
     </div>
     </div>
