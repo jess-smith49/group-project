@@ -12,14 +12,19 @@
     --tertiary: white;
     
 }
-header {
+/* header {
     text-align: center;
     background-color: var(--primary);
     border-style: solid;
-}
+} */
 
 body {
-    background-color: var(--secondary);
+    background-image: url(./images/new-foodbkg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 50vh;
 }
 
 .container {
@@ -32,24 +37,25 @@ body {
 }
 /*RECIPE AND DRINK BACKGROUND IMAGES*/
 .recipe-bg {
-    background-image: url("./images/recipe.jpg");
 
+    /* background-image: url("./images/recipe.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: relative; */
+
+    background-image: url("./images/recipe.jpg");
 
     padding: 150px;
 
 }
 
 .drink-bg {
-    background-image: url("./images/cocktail.png");
-
+    /* background-image: url("./images/cocktail.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: relative; */
 
     padding: 150px;
 }
@@ -79,7 +85,6 @@ img {
     font-size: 20px;
     font-weight: bold;
     font-style: italic;
-    text-decoration: underline;
     text-align: center;
 }
 .card-text {
@@ -103,4 +108,6 @@ img {
     box-shadow: 5px rgb(147, 147, 153);
     font-size: 15px;
 }
+
+
 

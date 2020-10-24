@@ -18,7 +18,7 @@ $("#find-recipe").click(function(event){
     .then(function(response){
 		
 		//getting recipe id and searching by the id
-         for(var k = 0; k < 11; k++){
+         for(var k = 0; k < 3; k++){
              let recipeId = response.meals[k].idMeal;
 
             fetch(
@@ -88,9 +88,8 @@ function displayRecipes (recipe){
     <div class="card-body">
     <div class="card-title">${recipeName}</div>
 	</div>
-	<div class="card-text">${recipeData}</div>
-	<div class="card-text">${recipeIns}</div>
-    <button class="btn save-recipe" type="submit">Click to Save</button>
+	<div class="card-ingrdnt">${recipeData}</div>
+	<div class="card-instructions">${recipeIns}</div>
     </div>
     </div>
     </div>
