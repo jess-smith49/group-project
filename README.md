@@ -9,15 +9,19 @@ Contributors:
 - Maya Santiago
 - Sheila Stapleton
 
-The concept of this assignment was to create an interactive, dynamic, web application that uses 2 server-side API's, accepts user input and returns data, and saves that data to local storage. 
+The concept of this assignment was to create an interactive, dynamic, web application that uses 2 server-side API's, and accepts user input and returns data.
 
-This is a team project. We created an appication that allows the user to find cocktail recipes and food recipes.
+This is a team project. We created an appication that allows the user to find cocktail recipes and food recipes. Strategically, our application only displays 3 recipes, to mitigate the decision making process and enhance the simplicity of making a decision.
 
 User Story:
 - As a user, I want to search for recipes to make both meals and alcholic beverages
 - So that I can be shown recipes and drinks that I searched for
-- When I find a recipe that I want to bookmark, I can save it for the next time I visit the application
+- When I find a recipe/drink that I want to make, I can see the ingredients, measurements, and instructions to make the drink/recipe
 
 # Technologies
 
 The technolgies used in this were HTML, CSS, JS, JQuery, Bootstrap, GitHub, GitHub Pages, Computer Terminal
+
+# Future Development
+
+Creating a save feature within the card so that when a user wants to save a specific recipe or cocktail, they can save it and it will be saved in local storage
