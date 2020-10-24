@@ -28,9 +28,12 @@ body {
   background-color: rgba(194, 41, 27, 0.5);
 }
 .cta button {
-  display: flex;
   align-items: center;
   background-color: #c2291b;
+  display: block;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
 }
 
 .saved-meals h2 {

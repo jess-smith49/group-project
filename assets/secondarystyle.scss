@@ -2,7 +2,10 @@ $color-bg-primary: #c2291b;
 $color-bg-secondary: #660a02;
 $font-color-primary: white;
 $font-color-secondary: #171415;
-
+//create brakpoints for media queries
+$breakpoint-desktop: 1024px;
+$breakpoint-tablet: 768px;
+$breakpoint-phone: 640px;
 
 // * {
 //     box-sizing: border-box;
@@ -41,9 +44,12 @@ body {
         background-color: rgba($color: #c2291b , $alpha: .5);
 
         button {
-            display: flex;
             align-items: center;
             background-color: $color-bg-primary;
+            display:block;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
             
 
            
