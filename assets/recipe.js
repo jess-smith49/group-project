@@ -1,105 +1,125 @@
-//console.dir(window.document);
-
-//Request and Response-Functioning (example search pasta & max fat)
-
-//var recipeNameEl = "recipe-results"
-
-fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=5e85b9e168244c1cbbe7ed190aca128b")
-
-.then(response => response.json())
-
-.then(data => console.log(data)); {
-
-for (var i = 0; i < 11; i ++) {
-	let title = data.results.title[i];
-	let image = data.results.image[i];
-	console.log(title, image);
-}
-	displayRecipeList(data);
-
-}
-
-
-
-// DONE - Used bootstrap in HTML.   Click event for when "Click here to begin" button is selected-
 
 //SEARCH FUNCTION
 $("#find-recipe").click(function(event){
-    console.log("clicked");
-
     event.preventDefault();
-
-    //getting text from ingredient input
-    var ingredientSearchEl = $("#ingredient-search").val().trim();
-
-    //fetch by ingredient, DELIMIMED BY A COMMA!!!
-    fetch("https://api.spoonacular.com/recipes/complexSearch?apiKey=5e85b9e168244c1cbbe7ed190aca128b" + ingredientSearchEl)
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(data){
-            console.log(data);
-            displayRecipeList(data);
-        })
-        //need to get array and run search
-
-
-
-
-    //getting text from name of recipe input 
+    console.log("clicked");
+	//empty modal before new search
+    $("#recipe-results").empty();
+    //get text from query input
     var recipeNameEl = $("#query-search").val().trim();
 
+	//fetch by meal name
+    fetch(
+        `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeNameEl}`
+        //`https://api.spoonacular.com/recipes/complexSearch?apiKey=2f81e89ecfed45b184b782b656464a48&query=${recipeNameEl}&addRecipeInformation=true&fillIngredients=true`
+        //`https://api.spoonacular.com/recipes/complexSearch?apiKey=2f81e89ecfed45b184b782b656464a48&query=${recipeNameEl}&showIngredients=true&instructionsRequired=true`
+    )
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(response){
+		
+		//getting recipe id and searching by the id
+         for(var k = 0; k < 3; k++){
 
-    //clear content out after search
-    $("#ingredient-search").val("");
+             let recipeId = response.meals[k].idMeal;
+
+            fetch(
+            `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`
+             ) 
+             .then(function(response){
+                 return response.json();
+             })
+             .then(function(data){
+                 console.log(data);
+                displayRecipes(data);
+             })
+        };
+        
+        
+    })
+
     $("#query-search").val("");
-})
+});
 
 
-//function to display recipe in modal
-function displayRecipeList(){
-    for (var i = 0; i < 11; i ++) {
-        let recipeSection = $("#recipe-results")
-        let recipeName = $("<li>")
-        let recipeImg = $("<img>")
-        let recipeIns = $("<p>")
-        //let title = data.results.title[i];
-        //let image = data.results.image[i];
-        console.log(title, image);
+
+
+
+//display function
+function displayRecipes (recipe){
+    console.log(recipe);
+    
+	//declaring the variables to the data
+    let recipeSection = $("#recipe-results");
+    let recipeName = recipe.meals[0].strMeal;
+	let recipeImg = recipe.meals[0].strMealThumb;
+	let recipeIns = recipe.meals[0].strInstructions;
+
+//for loop here for ingredient/measure array
+    let ingredArr= [];
+    let measureArr= [];
+
+	for (var k = 1; k < 16; k++) {
+
+        let ingredients = recipe.meals[0][`strIngredient${k}`];
+        let measurements = recipe.meals[0][`strMeasure${k}`];
+        //console.log("ingredients", ingredients);
+        // check if any of the ingredients are null or empty
+        if (ingredients === null || ingredients === "") {
+            break;
+        } else {
+            // check if any of the measurements are null or empty
+            if (recipe.meals[0][`strMeasure${k}`] === null) {
+                recipeData = recipe.meals[0][`strIngredient${k}`]
+                //drinkData = $("<li>").text(cocktail.drinks[0][`strIngredient${k}`])
+
+                
+            } else {
+                ingredArr.push(ingredients);
+                measureArr.push(measurements);
+                //console.log("INGRED", ingredArr.toString());
+                //console.log("MEASURE", measureArr.toString());
+
+                // retrieve the measurement and ingredients
+                recipeData = "";
+                for(var i = 0; i < measureArr.length; i ++){
+                    recipeData += measureArr[i] + ':' + ingredArr[i];
+                }
+                 
+               // recipeData = recipe.meals[0][`strMeasure${k}`] + ' : ' + recipe.meals[0][`strIngredient${k}`]
+				//   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
+				//console.log(recipeData);
+            }
+        };
     }
-}
-
-
-//ADD TO LIST FUNCTION
-$("#food-list").click(function(event){
-    console.log("clicked");
-})
-////DONE - Used bootstrap in HTML.  Upon click, modal will open with two text entry boxes and a search button
-	// Modal opens with heading "Search Here for a Recipe"
-
-//Search by ingredient Search Box
-	// clear search box after click event
-	//highlight box if search data entered
-	//account for invalid data entry
-
-//Search by cusine type Search Box
-	// clear search box after click event
-	//highlight box if search data entered
-	//account for invalid data entry
-
-//Search button - Click event
-//Do we need a second search button.  If yes, will cut down on a lot of if/then.  Currently, if we use one search button and user enters text into both boxes it will search for both.  We could also throw an error - enter information in one box only.
-
-
-
-
-
-  //event.preventDefault();
-
-	// .then(function(data)
-	// 	console.log(data)
 	
-	// })
+	//creating card for recipe section
+    let recipeCard = 
+    `<div class="container-fluid">
+    <div class="row">
+    <div class="col-12 mt-3">
+    <div class="card">
+    <div class="card-horizontal">
+    <div class="img-square-wrapper">
+    <img class="card-img" src= ${recipeImg}>
+    </div>
+    <div class="card-body">
+    <div class="card-title">${recipeName}</div>
+	</div>
+	<div class="card-ingrdnt">${recipeData}</div>
+	<div class="card-instructions">${recipeIns}</div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>`
+
+    
+    recipeSection.append(recipeCard);
+        
+};
 
 
 
@@ -111,10 +131,8 @@ $("#food-list").click(function(event){
 
 
 
-//document.querySelector("#recipe-results").innerHTML = "Recipe Name: " + data.results[0].title
 
 
-// &query=pasta&maxFat=25&
 
 
 
