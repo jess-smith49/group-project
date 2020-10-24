@@ -20,7 +20,9 @@ $("#find-recipe").click(function(event){
 		
 		//getting recipe id and searching by the id
          for(var k = 0; k < 3; k++){
-             let recipeId = response.meals[k].idMeal;
+            var randNum = Math.floor(response.meals.length * Math.random());
+            let recipeId = response.meals[randNum].idMeal;
+            console.log(recipeId);
 
             fetch(
             `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`
