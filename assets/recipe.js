@@ -1,6 +1,7 @@
 //search function
 $("#find-recipe").click(function(event){
     event.preventDefault();
+    console.log("clicked");
 	//empty modal before new search
     $("#recipe-results").empty();
     //get text from query input
@@ -31,10 +32,8 @@ $("#find-recipe").click(function(event){
                  console.log(data);
                 displayRecipes(data);
              })
-     };
+        };
         
-        
-        console.log(data);
         
     })
 
@@ -63,7 +62,7 @@ function displayRecipes (recipe){
 
         let ingredients = recipe.meals[0][`strIngredient${k}`];
         let measurements = recipe.meals[0][`strMeasure${k}`];
-        console.log("ingredients", ingredients);
+        //console.log("ingredients", ingredients);
         // check if any of the ingredients are null or empty
         if (ingredients === null || ingredients === "") {
             break;
@@ -77,8 +76,8 @@ function displayRecipes (recipe){
             } else {
                 ingredArr.push(ingredients);
                 measureArr.push(measurements);
-                console.log("INGRED", ingredArr.toString());
-                console.log("MEASURE", measureArr.toString());
+                //console.log("INGRED", ingredArr.toString());
+                //console.log("MEASURE", measureArr.toString());
 
                 // retrieve the measurement and ingredients
                 recipeData = "";
@@ -88,7 +87,7 @@ function displayRecipes (recipe){
                  
                // recipeData = recipe.meals[0][`strMeasure${k}`] + ' : ' + recipe.meals[0][`strIngredient${k}`]
 				//   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
-				console.log(recipeData);
+				//console.log(recipeData);
             }
         };
     }
