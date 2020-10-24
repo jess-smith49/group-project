@@ -15,7 +15,12 @@
   <header>
     <h1>Today's Menu</h1>
   </header>
+</br>
 
+
+
+</br>
+  <!--RECIPE GENERATOR AND DRINK SECTION-->
   <div class="hero">
     <div class="cta">
     <div class="row">
@@ -25,6 +30,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-6">
+
           <div class="col-6">
             <button class="recipe-btn button btn-lg" data-toggle="modal" data-target="#recipe-modal">Find a Delicious Meal</button>
           </div>
@@ -32,6 +38,7 @@
         <div class="col-6">
           <div class="col-6">
             <button class="drink-btn button btn-lg" data-toggle="modal" data-target="#drink-modal">Choose a Cocktail</button>
+
         </div>
       </div>
     </div>
@@ -72,16 +79,47 @@
     </div>
   </div>
 
-  <!--MODAL FOR DRINKS-->
-  <div id="drink-modal" class="modal">
-    <!--modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2>Search Here for a Cocktail</h2>
+    <!--MODAL FOR RECIPE-->
+    <div id="recipe-modal" class="modal">
+      <!--modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Search Here for a Recipe</h2>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class = "container-fluid">
+            <form>
+              <div class="form-group">
+                <label for="query-search">Search by name:</label>
+                <br>
+                <input type="text" id="query-search">
+              </div>
+              <button id="find-recipe">Search</button>
+            </form>
+            </div>
+          </div>
+          <div id = "recipe-search">
+          <ul id = "recipe-results">
+            <li></li>
+          </ul>
+        </div>
       </div>
-      <div class="modal-body">
-        <div class="card">
-          <div class="container-fluid">
+        <button type = "button" class = "btn btn-close" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+    <!--MODAL FOR DRINKS-->
+    <div id="drink-modal" class="modal">
+      <!--modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Search Here for a Cocktail</h2>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="container-fluid">
+
             <form>
               <div class="form-group">
                 <label for="liquor-search">Search by type of liquor:</label>
@@ -104,6 +142,7 @@
       </div>
     </div>
   </div>
+
   </div>
 
   <!--Final Generated Product Section-->
