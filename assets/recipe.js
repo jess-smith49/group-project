@@ -117,9 +117,9 @@ function displayRecipes (recipe){
 
     
     recipeSection.append(recipeCard);
-
         
 };
+
 
 
 
