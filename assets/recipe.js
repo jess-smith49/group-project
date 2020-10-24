@@ -61,8 +61,9 @@ function displayRecipes (recipe){
 
 	for (var k = 1; k < 16; k++) {
 
-        let ingredients = recipe.meals[0][`strIngredients${k}`];
+        let ingredients = recipe.meals[0][`strIngredient${k}`];
         let measurements = recipe.meals[0][`strMeasure${k}`];
+        console.log("ingredients", ingredients);
         // check if any of the ingredients are null or empty
         if (ingredients === null || ingredients === "") {
             break;
