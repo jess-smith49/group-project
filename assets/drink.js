@@ -14,12 +14,12 @@ $("#find-drink").click(function (event) {
         .then(function (response) {
             return response.json();
         })
-            // retrieve cocktail ID and run search by ID
-            .then(function (response) {
-                for (var i = 0; i < 11; i++) {
-                    let drinkId = response.drinks[i].idDrink;
-                    //console.log(drinkId)
-                    fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`)
+        // retrieve cocktail ID and run search by ID
+        .then(function (response) {
+            for (var i = 0; i < 11; i++) {
+                let drinkId = response.drinks[i].idDrink;
+                //console.log(drinkId)
+                fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`)
                     .then(function (response) {
                         return response.json();
                     })
@@ -27,12 +27,12 @@ $("#find-drink").click(function (event) {
                         console.log(data);
                         displayDrinkList(data);
                     })
-                }
-                
-            });
-            
-            
-            // if searching by name, retrieve text from input field
+            }
+
+        });
+
+
+    // if searching by name, retrieve text from input field
     var drinkNameSearchEl = $("#drinkName-search").val().trim();
     console.log(drinkNameSearchEl);
 
@@ -67,15 +67,20 @@ function displayDrinkList(cocktail) {
     //for (var i = 0; i < 1; i++) {
     //let drinkName = $("<li>").text(cocktail.drinks[0].strDrink);
     let drinkName = cocktail.drinks[0].strDrink;
-    let drinkImg =  cocktail.drinks[0].strDrinkThumb;
+    let drinkImg = cocktail.drinks[0].strDrinkThumb;
     //let drinkIns = $("<p>").text(cocktail.drinks[0].strInstructions);
     let drinkIns = cocktail.drinks[0].strInstructions;
-        //3
-        
-        // create a loop to go through and return the list of ingredients
-        for (var k = 1; k < 16; k++) {
+    //3
+    // while (k < 16){
+        let ingredArr= []
+        let measureArr = []
+    // create a loop to go through and return the list of ingredients
+    for (var k = 1; k < 16; k++) {
+       
+        let ingredients =  cocktail.drinks[0][`strIngredient${k}`];
+        let measurements = cocktail.drinks[0][`strMeasure${k}`]
         // check if any of the ingredients are null or empty
-        if (cocktail.drinks[0][`strIngredient${k}`] === null || cocktail.drinks[0][`strIngredient${k}`] === "") {
+        if (ingredients === null || ingredients === "") {
             break;
         } else {
             // check if any of the measurements are null or empty
@@ -83,14 +88,23 @@ function displayDrinkList(cocktail) {
                 drinkData = cocktail.drinks[0][`strIngredient${k}`]
                 //drinkData = $("<li>").text(cocktail.drinks[0][`strIngredient${k}`])
 
-                
+
             } else {
+                ingredArr.push(ingredients);
+                measureArr.push(measurements);
+                console.log("INGRED", ingredArr.toString());
+                console.log("MEASURE", measureArr.toString());
+                
                 // retrieve the measurement and ingredients
-                drinkData = cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`]
+                drinkData = measureArr + ":" + ingredArr;
+                //cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`]
                 //   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
             }
+        
+
         };
     }
+
     
     // append to modal
     let insCard = `<div class="container-fluid" id="${k}">
@@ -103,7 +117,10 @@ function displayDrinkList(cocktail) {
     </div>
     <div class="card-body">
     <div class="card-title">${drinkName}</div>
-    <p class="card-text">${drinkData}</p>
+    <div class="row">
+    <div class="col">${measureArr}</div>
+    <div class="col">${ingredArr}</div>
+    </div>
     <p class="card-text">${drinkIns}</p>
     </div>
     <button class="btn" id="${k}" type="submit">Click to Save</button>
@@ -115,15 +132,16 @@ function displayDrinkList(cocktail) {
     </div>`
     drinkSection.append(insCard);
 
+    }
 
 
-// if there are no results
-function noResults() {
-    $("#drink-results").html('<p>No Results</p>');
-}
+    // if there are no results
+    function noResults() {
+        $("#drink-results").html('<p>No Results</p>');
+    }
 
 
-};
+
 
 /*$(".saveBtn").click(function(event){
     var allSavedDrinks = [];
