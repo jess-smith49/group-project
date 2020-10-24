@@ -90,13 +90,19 @@ function displayDrinkList(cocktail) {
 
 
             } else {
-                ingredArr.push(ingredients);
+                ingredArr.push(ingredients)
                 measureArr.push(measurements);
                 console.log("INGRED", ingredArr.toString());
                 console.log("MEASURE", measureArr.toString());
                 
+
+                drinkData = "";
+
+                for( var i = 0; i < measureArr.length; i++){ 
+                    drinkData += measureArr[i] + ":" + ingredArr[i];
+                }
                 // retrieve the measurement and ingredients
-                drinkData = measureArr + ":" + ingredArr;
+                
                 //cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`]
                 //   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
             }
@@ -118,8 +124,7 @@ function displayDrinkList(cocktail) {
     <div class="card-body">
     <div class="card-title">${drinkName}</div>
     <div class="row">
-    <div class="col">${measureArr}</div>
-    <div class="col">${ingredArr}</div>
+    <div class="card-ingrdntl">${drinkData}</div>
     </div>
     <p class="card-text">${drinkIns}</p>
     </div>
@@ -141,21 +146,4 @@ function displayDrinkList(cocktail) {
 
 
 
-
-/*$(".saveBtn").click(function(event){
-    var allSavedDrinks = [];
-    var storedDrinks = JSON.parse(localStorage.getItem("stored-drinks"));
-
-    if(storedDrinks != null){
-        allSavedDrinks = storedDrinks
-    }
-    var savedDrinksId = this.attr("id");
-    var savedDrinks = $(`#card${storedDrinksId}`);
-
-    $("saved-results").append(savedDrinks);
-
-    allSavedDrinks.push(savedDrinks);
-
-    localStorage.setItem("stored-drinks", allSavedDrinks);
-})*/
 
