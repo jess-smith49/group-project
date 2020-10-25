@@ -37,6 +37,7 @@ header h1 {
   text-align: center;
   max-height: 100px;
   font-family: Oswald sans-serif;
+  color: white;
   font-size: 20px;
   font-weight: bold;
   line-height: calc(1.1em + 0.5vw);
@@ -56,11 +57,12 @@ header h1 {
   font-family: Oswald sans-serif;
   box-shadow: 3px 3px 3px 3px #171415;
   margin: 25px 25px 50px 0px;
+  font-size: 20px;
 }
 .cta button:hover {
   background-color: white;
   box-shadow: 0px 0px 10px 10px #575252;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
 }
 .cta button:hover::before {
@@ -114,6 +116,7 @@ header h1 {
   text-align: center;
 }
 .card .card-text {
+  font-family: Oswald sans-serif;
   padding: 15px;
   font-size: 15px;
   text-align: center;
@@ -135,6 +138,7 @@ header h1 {
   text-align: center;
 }
 .card-horizontal .card-text {
+  font-family: Oswald sans-serif;
   font-size: 15px;
   text-align: center;
 }

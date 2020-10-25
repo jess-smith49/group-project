@@ -119,8 +119,10 @@ function displayRecipes(recipe) {
     <img class="card-img-top" src= ${recipeImg}>
     <div class="card-body">
     <div class="card-title">${recipeName}</div>
-	<p class="card-ingrdnt">${recipeData}</li>
-    <p class="card-instructions">${recipeIns}</li>
+    <div class="card-text">
+	<p class="card-ingrdnt">${recipeData}</p>
+    <p class="card-instructions">${recipeIns}</p>
+    </div>
     </div>
     </div>
     </div>

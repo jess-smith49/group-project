@@ -59,6 +59,7 @@ header {
         text-align: center;
         max-height: 100px;
         font-family: $font-family-monospace;
+        color: $font-color-primary;
         font-size: 20px;
         font-weight: bold;
         line-height: calc(1.1em + 0.5vw);
@@ -82,12 +83,13 @@ header {
             font-family: $font-family-monospace;
             box-shadow: 3px 3px 3px 3px #171415;
             margin: 25px 25px 50px 0px;
+            font-size: 20px;
             
         }
         button:hover{
             background-color: white;
             box-shadow: 0px 0px 10px 10px #575252;
-            font-size: 20px;
+            font-size: 25px;
             font-weight: bold;
             
             &::before {
@@ -150,6 +152,7 @@ header {
         text-align: center;
     }
     .card-text {
+        font-family: $font-family-monospace;
         padding: 15px;
         font-size: 15px;
         text-align: center;
@@ -172,7 +175,9 @@ header {
         font-style: italic;
         text-align: center;
     }
+    
     .card-text {
+        font-family: $font-family-monospace;
         font-size: 15px;
         text-align: center;
     }

@@ -179,10 +179,12 @@ function displayDrinkList(cocktail) {
     <div class="card-body">
     <div class="card-title">${drinkName}</div>
     <div class="row">
+    <div class="card-text>
     <div class="card-ingrdntl">${drinkData.split(',')}</div>
     </div>
     <br>
-    <p class="card-text">${drinkIns}</p>
+    <p>${drinkIns}</p>
+    </div>
     </div>
     </div>
     </div>
