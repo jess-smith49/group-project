@@ -6,6 +6,7 @@ Contributors:
 - Jessica Smith:
     API research, HTML skeleton, minimal CSS, getting data for recipe file from API, recipe functionality, displaying recipe data in cards
 - Mai Yia Xiong
+  - API research, drink API functionality, recipe API functionality
 - Maya Santiago
 - Sheila Stapleton
 
