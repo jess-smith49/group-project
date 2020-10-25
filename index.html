@@ -10,81 +10,92 @@
   <title>The Menu</title>
 </head>
 
+<!--HEADER-->
+<header>
+  <h1>Today's Menu</h1>
+</header>
+
+
 <body>
-  <!--HEADER-->
-  <header>
-    <h1>Today's Menu</h1>
-  </header>
-</br>
-
-
-
-</br>
   <!--RECIPE GENERATOR AND DRINK SECTION-->
   <div class="hero">
+    <br>
     <div class="cta">
-    <div class="row">
-    <h2>Search our hundreds of our </h2>
-  </div>
-    <!--RECIPE GENERATOR AND DRINK SECTION-->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-6">
-
-          <div class="col-6">
-            <button class="recipe-btn button btn-lg" data-toggle="modal" data-target="#recipe-modal">Find a Delicious Meal</button>
-          </div>
+      <br>
+      <div class="pitch">
+        <h2>Welcome to Todays Menu.</h2>
+        <p>Strugling with decision paralysis is not fun, especially when you had a long day at work, or if you and the
+          hubby can't decide what to make for a date night in. With our search, we only display a limited amount of
+          recipes and cocktails for you to choose from. You choose the criteria, and we choose the meal and cocktail for
+          you.</p>
         </div>
-        <div class="col-6">
-          <div class="col-6">
-            <button class="drink-btn button btn-lg" data-toggle="modal" data-target="#drink-modal">Choose a Cocktail</button>
+          <br>
+        <!--RECIPE GENERATOR AND DRINK SECTION-->
+        <div class="row">
+       
 
+          <div class="col-6">
+            <button class="recipe-btn button" data-toggle="modal" data-target="#recipe-modal">Find a Delicious
+              Meal</button>
+          </div>
+      
+       
+          <div class="col-6">
+            <button class="drink-btn button" data-toggle="modal" data-target="#drink-modal">Choose a
+              Cocktail</button>
+
+         
         </div>
       </div>
     </div>
   </div>
-  </div>
-</div>
+  
+  <br>
 
-    <!--MODAL FOR RECIPE-->
-    <div id="recipe-modal" class="modal">
-      <!--modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Search Here for a Recipe</h2>
-        </div>
-        <div class="modal-body">
-          <div class="card">
-            <div class = "container-fluid">
+
+
+
+
+
+  <!--MODAL FOR RECIPE-->
+  <div id="recipe-modal" class="modal">
+    <!--modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Search Here for a Recipe</h2>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="container-fluid">
             <form>
               <div class="form-group">
                 <label for="query-search">Search by name:</label>
                 <br>
                 <input type="text" id="query-search">
               </div>
-              <button id="find-recipe">Search</button>
+              <button id="find-recipe" class="get-result">Search</button>
             </form>
-            </div>
           </div>
-          <div id = "recipe-search">
-          <ul id = "recipe-results">
+        </div>
+        <div id="recipe-search">
+          <ul id="recipe-results">
           </ul>
         </div>
       </div>
-        <button type = "button" class = "btn btn-close" data-dismiss="modal">Close</button>
-      </div>
+      <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
     </div>
+  </div>
 
-    <!--MODAL FOR DRINKS-->
-    <div id="drink-modal" class="modal">
-      <!--modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Search Here for a Cocktail</h2>
-        </div>
-        <div class="modal-body">
-          <div class="card">
-            <div class="container-fluid">
+  <!--MODAL FOR DRINKS-->
+  <div id="drink-modal" class="modal">
+    <!--modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Search Here for a Cocktail</h2>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="container-fluid">
 
             <form>
               <div class="form-group">
@@ -96,7 +107,7 @@
                 <br>
                 <input type="text" id="drinkName-search">
               </div>
-              <button id="find-drink">Search</button>
+              <button id="find-drink" class="get-result">Search</button>
             </form>
           </div>
         </div>
@@ -109,13 +120,13 @@
     </div>
   </div>
 
-  </div>
+
 
   <!--Final Generated Product Section-->
   <div class="saved-meals">
     <div class="saved-results">
       <h2>Saved Meals</h2>
-      <p>Saved recipes will load here</p>
+      <p>Feature Coming Soon!</p>
       <!--ELEMENTS TO BE CREATED UPON SELECTION IN JS
             <p> for recipe + drink name
             <p> for Ingredients/recipe steps
