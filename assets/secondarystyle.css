@@ -137,6 +137,10 @@ header h1 {
   font-style: italic;
   text-align: center;
 }
+.card-horizontal div .row {
+  padding-left: 150px;
+  text-align: center;
+}
 .card-horizontal .card-text {
   font-family: Oswald sans-serif;
   font-size: 15px;

@@ -162,7 +162,7 @@ function displayDrinkList(cocktail) {
             if (measureArr[i] !== undefined) {
                 measurement = measureArr[i]
             }
-            drinkData += measurement + " : " + ingredArr[i] + "<br>";
+            drinkData += measurement + "  " + ingredArr[i] + "<br>";
         };
     };
 
