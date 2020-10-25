@@ -3,9 +3,9 @@ $color-bg-secondary: #660a02;
 $font-color-primary: white;
 $font-color-secondary: #171415;
 //create brakpoints for media queries
-$breakpoint-desktop: 1024px;
-$breakpoint-tablet: 768px;
-$breakpoint-phone: 640px;
+$breakpoint-desktop: "only screen and (max-width :1024px)";
+$breakpoint-tablet: "only screen and (max-width : 768px)";
+$breakpoint-phone: "only screen and (max-width : 375px)";
 
 // * {
 //     box-sizing: border-box;
@@ -39,6 +39,7 @@ body {
 
 .cta {
         background-color: rgba($color: #c2291b , $alpha: .5);
+        padding-bottom: 20px;
         p{
         text-align: center;
         max-height: 100px;
@@ -48,18 +49,18 @@ body {
         }
         col-6 {
             display: inline-block;
+            align-content: center;
             
         }
         button {
             background-color: $color-bg-primary;
             height: 200px;
-            width: 50%;
-            border-radius: 0%;
+            width: 200px;
+            border-radius: 50%;
             line-height: 15px;
             text-overflow: wrap;
-           
-
-           
+            margin-left: 50%;
+        
         }
         
     }
@@ -72,7 +73,7 @@ body {
     div {
     background-color: $color-bg-primary;
     position: absolute;
-    bottom: 0;
+    bottom: 1;
     min-width: 100%;
     min-height: 20vh;
     }
@@ -94,5 +95,74 @@ footer {
 
     h5 {
         color: $font-color-primary;
+    }
+}
+
+@media #{$breakpoint-desktop} {
+    .cta {
+        button {
+            margin-left: 100px;
+        }
+    }
+}
+
+@media #{$breakpoint-tablet} {
+    header {
+        font-size: 20px;
+    }
+    .cta {
+        button {
+            border-radius: 0;
+            position: inline-block ;
+        }
+    }
+}
+
+@media #{$breakpoint-phone} {
+    header {
+        width: 100%;
+    }
+
+    .hero {
+        position: fixed;
+        height:40vh;
+        width: 100%;
+    }
+    .cta {
+         height: 60vh;
+         padding: 10px;
+         p {
+              font-size: 15px;
+              height: 150px;
+            }
+         button {
+            
+             height: 100px;
+             width:177.5px;
+             margin:50px 60px 10px 0px;
+             font-size: 15px;
+            }
+         .col-6 {
+             padding: 0;
+             align-items: center;
+         }
+        }
+        
+
+    .saved-meals {
+        div{
+        position: fixed;
+        bottom: 1px;
+        width: 100%;
+        }
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    h5 {
+        font-size: 15px;
     }
 }
