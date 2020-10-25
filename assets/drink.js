@@ -99,7 +99,7 @@ function displayDrinkList(cocktail) {
                 drinkData = "";
 
                 for( var i = 0; i < measureArr.length; i++){ 
-                    drinkData += measureArr[i] + ":" + ingredArr[i];
+                    drinkData += measureArr[i] + " : " + ingredArr[i];
                 }
                 // retrieve the measurement and ingredients
                 
