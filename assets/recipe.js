@@ -8,7 +8,7 @@ $("#find-recipe").click(function (event) {
 	//get text from query input
 	var recipeNameEl = $("#query-search").val().trim();
 
-	let mealArr = []; //make copy of array
+	let mealArr = [];
 	let randNum;
 	let removed = 0;
 	let recipeId;

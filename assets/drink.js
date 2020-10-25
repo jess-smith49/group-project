@@ -1,4 +1,3 @@
-
 // event function when search button is clicked
 $("#find-drink").click(function (event) {
     event.preventDefault();
@@ -9,6 +8,10 @@ $("#find-drink").click(function (event) {
     // if searching by liquor type, retrieve text from input field
     var liquorSearchEl = $("#liquor-search").val().trim();
 
+    // if searching by name, retrieve text from input field
+    var drinkNameSearchEl = $("#drinkName-search").val().trim();
+    console.log(drinkNameSearchEl);
+    
     // fetch data by type of liquor
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${liquorSearchEl}`)
         .then(function (response) {
@@ -32,9 +35,6 @@ $("#find-drink").click(function (event) {
         });
 
 
-    // if searching by name, retrieve text from input field
-    var drinkNameSearchEl = $("#drinkName-search").val().trim();
-    console.log(drinkNameSearchEl);
 
     if (drinkNameSearchEl) {
         // fetch data by drink name (note-if the drink name is two words long, the two words should be separated by an underscore)
@@ -99,12 +99,8 @@ function displayDrinkList(cocktail) {
                 drinkData = "";
 
                 for( var i = 0; i < measureArr.length; i++){ 
-                    drinkData += measureArr[i] + " : " + ingredArr[i];
+                    drinkData += measureArr[i] + " : " + ingredArr[i] + "<br>";
                 }
-                // retrieve the measurement and ingredients
-                
-                //cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`]
-                //   drinkData = $("<li>").text(cocktail.drinks[0][`strMeasure${k}`] + ' : ' + cocktail.drinks[0][`strIngredient${k}`])
             }
         
 
@@ -126,6 +122,7 @@ function displayDrinkList(cocktail) {
     <div class="row">
     <div class="card-ingrdntl">${drinkData.split(',')}</div>
     </div>
+    <br>
     <p class="card-text">${drinkIns}</p>
     </div>
     </div>
@@ -143,7 +140,3 @@ function displayDrinkList(cocktail) {
     function noResults() {
         $("#drink-results").html('<p>No Results</p>');
     }
-
-
-
-
