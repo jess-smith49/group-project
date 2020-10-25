@@ -77,7 +77,7 @@ function displayRecipes(recipe) {
 	let ingredArr = [];
 	let measureArr = [];
 
-	for (var k = 1; k < 16; k++) {
+	for (var k = 1; k < 20; k++) {
 
 		let ingredients = recipe.meals[0][`strIngredient${k}`];
 		let measurements = recipe.meals[0][`strMeasure${k}`];
