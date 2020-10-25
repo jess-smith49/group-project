@@ -94,10 +94,34 @@ header h1 {
   color: white;
 }
 
+.card {
+  display: flex;
+  flex: 1 1 auto;
+  margin: 10px;
+  box-shadow: -1px -1px 3px 3px #575252;
+}
+.card .card-img-top {
+  border: black 2px solid;
+  height: 250px;
+  width: 250px;
+  border-radius: 0%;
+  margin-left: 280px;
+}
+.card .card-title {
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}
+.card .card-text {
+  padding: 15px;
+  font-size: 15px;
+  text-align: center;
+}
+
 .card-horizontal {
   display: flex;
   flex: 1 1 auto;
-  border: black 2px solid;
 }
 .card-horizontal .card-img {
   height: 100%;
@@ -113,6 +137,27 @@ header h1 {
 .card-horizontal .card-text {
   font-size: 15px;
   text-align: center;
+}
+
+.modal-body label {
+  font-family: Oswald sans-serif;
+  font-size: 20px;
+}
+.modal-body input {
+  border: 2px solid black;
+}
+.modal-body .get-result {
+  background-color: #660a02;
+  border: none;
+  height: 30px;
+  width: 70px;
+  font-family: Oswald sans-serif;
+  color: white;
+  margin: 5px;
+}
+.modal-body .get-result:hover {
+  background-color: #c2291b;
+  color: #171415;
 }
 
 footer {

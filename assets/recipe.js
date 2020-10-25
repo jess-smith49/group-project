@@ -99,21 +99,13 @@ function displayRecipes (recipe){
     let recipeCard = 
     `<div class="container-fluid">
     <div class="row">
-    <div class="col-12 mt-3">
     <div class="card">
-    <div class="card-horizontal">
-    <div class="img-square-wrapper">
-    <img class="card-img" src= ${recipeImg}>
-    </div>
+    <img class="card-img-top" src= ${recipeImg}>
     <div class="card-body">
     <div class="card-title">${recipeName}</div>
     </div>
-    <ul>
-	<li class="card-ingrdnt">${recipeData}</li>
-    <li class="card-instructions">${recipeIns}</li>
-    </ul>
-    </div>
-    </div>
+	<p class="card-ingrdnt">${recipeData}</li>
+    <p class="card-instructions">${recipeIns}</li>
     </div>
     </div>
     </div>

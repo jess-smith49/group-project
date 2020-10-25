@@ -127,10 +127,38 @@ header {
 
 }
 
+.card {
+    display: flex;
+    flex: 1 1 auto;
+    margin: 10px;
+    box-shadow: -1px -1px 3px 3px #575252;
+
+
+    .card-img-top {
+        border: black 2px solid;
+        height: 250px;
+        width: 250px;
+        border-radius: 0%;
+        margin-left: 280px ;
+    }
+    
+    
+    .card-title {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+        text-align: center;
+    }
+    .card-text {
+        padding: 15px;
+        font-size: 15px;
+        text-align: center;
+    }
+}
 .card-horizontal {
     display: flex;
     flex: 1 1 auto;
-    border: black 2px solid;
+  
     .card-img {
         height: 100%;
         width: 200px;
@@ -150,7 +178,29 @@ header {
     }
 }
 
+.modal-body {
+    label {
+        font-family: $font-family-monospace;
+        font-size: 20px;
+    }
+     input {
+         border: 2px solid black;
+     }
+    .get-result {
+    background-color: $color-bg-secondary;
+    border: none;
+    height: 30px;
+    width: 70px;
+    font-family: $font-family-monospace;
+    color: $font-color-primary;
+    margin: 5px;
 
+        &:hover {
+            background-color: $color-bg-primary;
+            color: $font-color-secondary;
+        }
+    }
+}
 footer {
     background-color: $color-bg-secondary;
     min-width: 100%;
