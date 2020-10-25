@@ -70,7 +70,7 @@ $("#find-drink").click(function (event) {
                 return response.json();
             })
             .then(function (data) {
-                
+
                 // run a loop to retrieve 3 random drinks
                 for (var i = 0; i < 3; i++) {
 
@@ -131,6 +131,7 @@ function displayDrinkList(cocktail) {
     // while (k < 16){
     let ingredArr = []
     let measureArr = []
+    let drinkData = "";
     // create a loop to go through and return the list of ingredients
     for (var k = 1; k < 16; k++) {
 
@@ -142,9 +143,9 @@ function displayDrinkList(cocktail) {
         } else {
             // check if any of the measurements are null or empty
             if (cocktail.drinks[0][`strMeasure${k}`] === null) {
-                drinkData = cocktail.drinks[0][`strIngredient${k}`]
+                //drinkData = cocktail.drinks[0][`strIngredient${k}`]
                 //drinkData = $("<li>").text(cocktail.drinks[0][`strIngredient${k}`])
-
+                ingredArr.push(ingredients)
 
             } else {
                 ingredArr.push(ingredients)
@@ -153,12 +154,15 @@ function displayDrinkList(cocktail) {
                 //console.log("MEASURE", measureArr.toString());
 
 
-                drinkData = "";
-
-                for (var i = 0; i < measureArr.length; i++) {
-                    drinkData += measureArr[i] + " : " + ingredArr[i] + "<br>";
-                }
             }
+        }
+        drinkData = "";
+        for (var i = 0; i < ingredArr.length; i++) {
+            var measurement = '';
+            if (measureArr[i] !== undefined) {
+                measurement = measureArr[i]
+            }
+            drinkData += measurement + " : " + ingredArr[i] + "<br>";
         };
     };
 
