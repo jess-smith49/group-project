@@ -2,12 +2,16 @@
 
 # Description
 
+# Deployed Site
+https://jess-smith49.github.io/the-menu/
+
 Contributors:
 - Jessica Smith:
     API research, HTML skeleton, minimal CSS, getting data for recipe file from API, recipe functionality, displaying recipe data in cards
 - Mai Yia Xiong
   - API research, drink API functionality, recipe API functionality
 - Maya Santiago
+      - API research, Created and styled cards for both recipe and drink data. Designed the layout and implemented SASS to style the         landing page and modals.
 - Sheila Stapleton
 
 The concept of this assignment was to create an interactive, dynamic, web application that uses 2 server-side API's, and accepts user input and returns data.
