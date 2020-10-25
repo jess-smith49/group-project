@@ -85,7 +85,7 @@ function displayRecipes (recipe){
                 // retrieve the measurement and ingredients
                 recipeData = "";
                 for(var i = 0; i < measureArr.length; i ++){
-                    recipeData += measureArr[i] + ':' + ingredArr[i];
+                    recipeData += measureArr[i] + ': ' + ingredArr[i];
                 }
                  
                // recipeData = recipe.meals[0][`strMeasure${k}`] + ' : ' + recipe.meals[0][`strIngredient${k}`]
@@ -107,9 +107,11 @@ function displayRecipes (recipe){
     </div>
     <div class="card-body">
     <div class="card-title">${recipeName}</div>
-	</div>
-	<div class="card-ingrdnt">${recipeData}</div>
-	<div class="card-instructions">${recipeIns}</div>
+    </div>
+    <ul>
+	<li class="card-ingrdnt">${recipeData}</li>
+    <li class="card-instructions">${recipeIns}</li>
+    </ul>
     </div>
     </div>
     </div>

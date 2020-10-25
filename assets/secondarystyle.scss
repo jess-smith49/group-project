@@ -38,19 +38,26 @@ body {
 
 
 .cta {
-        top: 50px;
-        text-align: center;
-        height: 40vh;
         background-color: rgba($color: #c2291b , $alpha: .5);
-
-        button {
-            align-items: center;
-            background-color: $color-bg-primary;
-            display:block;
-            height: 300px;
-            width: 300px;
-            border-radius: 50%;
+        p{
+        text-align: center;
+        max-height: 100px;
+       
+        font-size: 20px;
+        height: 40vh;
+        }
+        col-6 {
+            display: inline-block;
             
+        }
+        button {
+            background-color: $color-bg-primary;
+            height: 200px;
+            width: 50%;
+            border-radius: 0%;
+            line-height: 15px;
+            text-overflow: wrap;
+           
 
            
         }
