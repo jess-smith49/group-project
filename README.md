@@ -33,8 +33,8 @@ Creating a save feature within the card so that when a user wants to save a spec
 https://jess-smith49.github.io/the-menu/
 
 # Screenshots
-![](landing-page.jpeg)
-![](cocktail-cards.png)
-![](cocktail-modal.png)
-![](meal-cards.png)
-![](meal-modal.png)
+![](assets/images/landing-page.jpeg)
+![](assets/images/cocktail-cards.png)
+![](assets/images/cocktail-modal.png)
+![](assets/images/meal-cards.png)
+![](assets/images/meal-modal.png)
