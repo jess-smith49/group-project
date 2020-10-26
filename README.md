@@ -5,11 +5,11 @@ Interactive Front-End Web Development Project
 # Description
 Contributors:
 - Jessica Smith:
-    API research, HTML skeleton, minimal CSS, getting data for recipe file from API, recipe functionality, displaying recipe data in cards
+    - API research, HTML skeleton, minimal CSS, getting data for recipe file from API, recipe functionality, displaying recipe data in cards
 - Mai Yia Xiong
   - API research, drink API functionality, recipe API functionality
 - Maya Santiago
-      - API research, Created and styled cards for both recipe and drink data. Designed the layout and implemented SASS to style the         landing page and modals.
+      - API research, Created and styled cards for both recipe and drink data. Designed the layout and implemented SASS to style the landing page and modals.
 - Sheila Stapleton
 
 The concept of this assignment was to create an interactive, dynamic, web application that uses 2 server-side API's, and accepts user input and returns data.
@@ -23,7 +23,7 @@ User Story:
 
 # Technologies
 
-The technolgies used in this were HTML, CSS, JS, JQuery, Bootstrap, GitHub, GitHub Pages, Computer Terminal
+The technolgies used in this were HTML, CSS, JS, JQuery, Bootstrap, GitHub, GitHub Pages, Computer Terminal, Sass
 
 # Future Development
 
@@ -33,7 +33,7 @@ Creating a save feature within the card so that when a user wants to save a spec
 https://jess-smith49.github.io/the-menu/
 
 # Screenshots
-![](landing-page.png)
+![](landing-page.jpeg)
 ![](cocktail-cards.png)
 ![](cocktail-modal.png)
 ![](meal-cards.png)
