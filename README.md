@@ -30,3 +30,13 @@ The technolgies used in this were HTML, CSS, JS, JQuery, Bootstrap, GitHub, GitH
 # Future Development
 
 Creating a save feature within the card so that when a user wants to save a specific recipe or cocktail, they can save it and it will be saved in local storage
+
+# Deployed Site
+https://jess-smith49.github.io/the-menu/
+
+# Screenshots
+![](landing-page.png)
+![](cocktail-cards.png)
+![](cocktail-modal.png)
+![](meal-cards.png)
+![](meal-modal.png)
