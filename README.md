@@ -1,10 +1,6 @@
 # The Menu
 
 # Description
-
-# Deployed Site
-https://jess-smith49.github.io/the-menu/
-
 Contributors:
 - Jessica Smith:
     API research, HTML skeleton, minimal CSS, getting data for recipe file from API, recipe functionality, displaying recipe data in cards
