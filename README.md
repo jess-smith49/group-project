@@ -1,5 +1,7 @@
 # The Menu
 
+Interactive Web Development Project
+
 # Description
 Contributors:
 - Jessica Smith:
