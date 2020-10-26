@@ -1,6 +1,6 @@
 # The Menu
 
-Interactive Web Development Project
+Interactive Front-End Web Development Project
 
 # Description
 Contributors:
