@@ -3,7 +3,8 @@ $color-bg-secondary: #660a02;
 $font-color-primary: white;
 $font-color-secondary: #171415;
 //font
-$font-family-monospace:  Oswald sans-serif;
+$heading:  'Abril Fatface', cursive;
+$text: 'Playfair Display', serif;
 //border-width
 $bw: 1.5em;
 //create brakpoints for media queries
@@ -11,31 +12,65 @@ $breakpoint-desktop: "only screen and (min-width :1024px)";
 $breakpoint-tablet: "only screen and (max-width : 768px)";
 $breakpoint-phone: "only screen and (max-width : 414px)";
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
-// * {
-//     box-sizing: border-box;
-//     margin: 0;
-//     padding: 0;
-//   }
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
 .hero {
-    background: url('./images/diner.jpg');
+    background: url('./images/diner3.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 60vh;
+    height: 75vh;
+    box-shadow:  28px 28px 57px #a0c4a2;
+    padding: 3%;
    
+   // color: white;
+    text-align: right;
+    &-pitch {
+        font-family: $text;
+     
+        h2 {
+            font-family: $heading;
+        }
+       
+        .p-wrapper {
+            width: 60%;
+            
+        }
+       
+    }
+  
+    
 }
 
 .cta {
     background: #bce7be;
-    height: 30vh;
+    height: auto;
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
     .button {
+        height: 14rem;
+        width: 14rem;
+        margin: 3rem;
         background: #bce7be;
         border-radius: 50px;
         box-shadow:  28px 28px 57px #a0c4a2,
         -28px -28px 57px #d8ffdb;
-
+        border: none;
+        font-family: $text;
+            &:hover,
+            &:active {
+                box-shadow:  28px 28px 57px #6d8b6e,
+                -28px -28px 57px #c4e4c7;
+            }
     }
 
 }
@@ -62,7 +97,7 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
         text-align: center;
     }
     .card-text {
-        font-family: $font-family-monospace;
+      
         padding: 15px;
         font-size: 15px;
         text-align: center;
@@ -92,7 +127,7 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
         }
     }
     .card-text {
-        font-family: $font-family-monospace;
+      
         font-size: 15px;
         text-align: center;
     }
@@ -100,7 +135,7 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
 
 .modal-body {
     label {
-        font-family: $font-family-monospace;
+       
         font-size: 20px;
     }
      input {
@@ -111,7 +146,7 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
     border: none;
     height: 30px;
     width: 70px;
-    font-family: $font-family-monospace;
+   
     color: $font-color-primary;
     margin: 5px;
 

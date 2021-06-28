@@ -1,22 +1,66 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .hero {
-  background: url("./images/diner.jpg");
+  background: url("./images/diner3.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 60vh;
+  height: 75vh;
+  -webkit-box-shadow: 28px 28px 57px #a0c4a2;
+          box-shadow: 28px 28px 57px #a0c4a2;
+  padding: 3%;
+  text-align: right;
+}
+
+.hero-pitch {
+  font-family: "Playfair Display", serif;
+}
+
+.hero-pitch h2 {
+  font-family: "Abril Fatface", cursive;
+}
+
+.hero-pitch .p-wrapper {
+  width: 60%;
 }
 
 .cta {
   background: #bce7be;
-  height: 30vh;
+  height: auto;
+  padding: 1%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
 .cta .button {
+  height: 14rem;
+  width: 14rem;
+  margin: 3rem;
   background: #bce7be;
   border-radius: 50px;
   -webkit-box-shadow: 28px 28px 57px #a0c4a2, -28px -28px 57px #d8ffdb;
           box-shadow: 28px 28px 57px #a0c4a2, -28px -28px 57px #d8ffdb;
+  border: none;
+  font-family: "Playfair Display", serif;
+}
+
+.cta .button:hover, .cta .button:active {
+  -webkit-box-shadow: 28px 28px 57px #6d8b6e, -28px -28px 57px #c4e4c7;
+          box-shadow: 28px 28px 57px #6d8b6e, -28px -28px 57px #c4e4c7;
 }
 
 .card {
@@ -47,7 +91,6 @@
 }
 
 .card .card-text {
-  font-family: Oswald sans-serif;
   padding: 15px;
   font-size: 15px;
   text-align: center;
@@ -81,13 +124,11 @@
 }
 
 .card-horizontal .card-text {
-  font-family: Oswald sans-serif;
   font-size: 15px;
   text-align: center;
 }
 
 .modal-body label {
-  font-family: Oswald sans-serif;
   font-size: 20px;
 }
 
@@ -100,7 +141,6 @@
   border: none;
   height: 30px;
   width: 70px;
-  font-family: Oswald sans-serif;
   color: white;
   margin: 5px;
 }

@@ -11,58 +11,61 @@
 </head>
 
 <!--HEADER-->
-<header>
-  <h1>Today's Menu</h1>
-</header>
-
 
 <body>
   <!--RECIPE GENERATOR AND DRINK SECTION-->
 
   <section class="hero">
     <div class="hero-img">
-      <div class="hero-pitch">
+      <div class="hero-pitch float-end">
         <h2>Welcome to Todays Menu.</h2>
-        <p>Strugling with decision paralysis is not fun, especially when you had a long day at work, or if you and the
-          hubby can't decide what to make for a date night in. With our search, we only display a limited amount of
-          recipes and cocktails for you to choose from. You choose the criteria, and we choose the meal and cocktail for
-          you.</p>
+        <div class="p-wrapper">
+          <p>Strugling with decision paralysis is not fun, especially when you had a long day at work, or if you and the
+            hubby can't decide what to make for a date night in. With our search, we only display a limited amount of
+            recipes and cocktails for you to choose from. You choose the criteria, and we choose the meal and cocktail
+            for
+            you.
+          </p>
+        </div>
       </div>
       <!--RECIPE GENERATOR AND DRINK SECTION-->
-    </div> 
-    
+    </div>
+
   </section>
   <section class="cta">
-  <div class="row">
-    <div>
-      <button class="recipe-btn button" data-toggle="modal" data-target="#recipe-modal">Find a Delicious
-        Meal</button>
+    <div class="row">
+      <div>
+        <button class="recipe-btn button" data-toggle="modal" data-target="#recipe-modal">Find a Delicious
+          Meal</button>
+      </div>
+      <div>
+        <button class="drink-btn button" data-toggle="modal" data-target="#drink-modal">Choose a
+          Cocktail</button>
+      </div>
+      <div>
+        <button class="button" data-toggle="modal" data-target="#drink-modal">View Saved Recipes</button>
+      </div>
     </div>
-    <div>
-      <button class="drink-btn button" data-toggle="modal" data-target="#drink-modal">Choose a
-        Cocktail</button>
-    </div>
-  </div>
-</section>
-    
-    <!--MODAL FOR RECIPE-->
-    <div id="recipe-modal" class="modal">
-      <!--modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2>Search Here for a Recipe</h2>
-        </div>
-        <div class="modal-body">
-          <div class="card">
-            <div class="container-fluid">
-              <form>
-                <div class="form-group">
-                  <label for="query-search">Search by name:</label>
-                  <br>
-                  <input type="text" id="query-search">
-                </div>
-                <button id="find-recipe" class="get-result">Search</button>
-              </form>
+  </section>
+
+  <!--MODAL FOR RECIPE-->
+  <div id="recipe-modal" class="modal">
+    <!--modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Search Here for a Recipe</h2>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <div class="container-fluid">
+            <form>
+              <div class="form-group">
+                <label for="query-search">Search by name:</label>
+                <br>
+                <input type="text" id="query-search">
+              </div>
+              <button id="find-recipe" class="get-result">Search</button>
+            </form>
           </div>
         </div>
         <div id="recipe-search">
@@ -121,7 +124,7 @@
             <img> for picture of drink? recipe? both?
         -->
   </div>
-  </div> -->
+  </div>
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -130,8 +133,5 @@
   <script src="./assets/recipe.js"></script>
 </body>
 <!--Footer-->
-<footer>
-  <h5>Made by MMJS INC 2020</h5>
-</footer>
 
 </html>
