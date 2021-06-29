@@ -16,26 +16,26 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
   }
 
 .hero {
-    background: url('./images/diner3.png');
+    background: url('./images/diner4.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 75vh;
+    height: 70vh;
     box-shadow:  28px 28px 57px #a0c4a2;
     padding: 3%;
-   
-   // color: white;
     text-align: right;
     &-pitch {
-        font-family: $text;
-     
+        font-family: $heading;
+       
+        padding-top: 5%;
         h2 {
-            font-family: $heading;
+            font-size: 5vh;
         }
        
-        .p-wrapper {
-            width: 60%;
-            
+        p {
+            padding-left: 40%;
+            margin-top: 4%;
+            font-size: 3vh;
         }
        
     }
@@ -45,21 +45,22 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
 
 .cta {
     background: #bce7be;
-    height: auto;
+    height: 30vh;
     padding: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    bottom: 0;
    
     .button {
-        height: 14rem;
-        width: 14rem;
+        height: 12rem;
+        width: 12rem;
         margin: 3rem;
         background: #bce7be;
         border-radius: 50px;
-        box-shadow:  28px 28px 57px #a0c4a2,
-        -28px -28px 57px #d8ffdb;
+        box-shadow:  18px 18px 37px #a0c4a2,
+        -18px -18px 37px #d8ffdb;
         border: none;
         font-family: $text;
             &:hover,

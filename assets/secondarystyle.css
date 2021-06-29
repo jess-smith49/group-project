@@ -7,11 +7,11 @@
 }
 
 .hero {
-  background: url("./images/diner3.png");
+  background: url("./images/diner4.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 75vh;
+  height: 70vh;
   -webkit-box-shadow: 28px 28px 57px #a0c4a2;
           box-shadow: 28px 28px 57px #a0c4a2;
   padding: 3%;
@@ -19,20 +19,23 @@
 }
 
 .hero-pitch {
-  font-family: "Playfair Display", serif;
+  font-family: "Abril Fatface", cursive;
+  padding-top: 5%;
 }
 
 .hero-pitch h2 {
-  font-family: "Abril Fatface", cursive;
+  font-size: 5vh;
 }
 
-.hero-pitch .p-wrapper {
-  width: 60%;
+.hero-pitch p {
+  padding-left: 40%;
+  margin-top: 4%;
+  font-size: 3vh;
 }
 
 .cta {
   background: #bce7be;
-  height: auto;
+  height: 30vh;
   padding: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,16 +47,17 @@
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  bottom: 0;
 }
 
 .cta .button {
-  height: 14rem;
-  width: 14rem;
+  height: 12rem;
+  width: 12rem;
   margin: 3rem;
   background: #bce7be;
   border-radius: 50px;
-  -webkit-box-shadow: 28px 28px 57px #a0c4a2, -28px -28px 57px #d8ffdb;
-          box-shadow: 28px 28px 57px #a0c4a2, -28px -28px 57px #d8ffdb;
+  -webkit-box-shadow: 18px 18px 37px #a0c4a2, -18px -18px 37px #d8ffdb;
+          box-shadow: 18px 18px 37px #a0c4a2, -18px -18px 37px #d8ffdb;
   border: none;
   font-family: "Playfair Display", serif;
 }
