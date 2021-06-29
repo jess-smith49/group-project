@@ -64,89 +64,31 @@
 }
 
 .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  margin: 10px;
-  -webkit-box-shadow: -1px -1px 3px 3px #575252;
-          box-shadow: -1px -1px 3px 3px #575252;
+  max-width: 18rem;
 }
 
-.card .card-img-top {
-  border: black 2px solid;
-  height: 250px;
-  width: 250px;
-  border-radius: 0%;
-  margin-left: 280px;
+.modal-content {
+  font-family: "Abril Fatface", cursive;
+  background: #bce7be;
+  padding: 3%;
 }
 
-.card .card-title {
-  font-size: 20px;
-  font-weight: bold;
-  font-style: italic;
-  text-align: center;
+.modal-body {
+  -webkit-box-shadow: 18px 18px 27px #a0c4a2;
+          box-shadow: 18px 18px 27px #a0c4a2;
+  border-radius: 50px;
 }
 
-.card .card-text {
-  padding: 15px;
-  font-size: 15px;
-  text-align: center;
+.modal input {
+  background: #bce7be;
+  -webkit-box-shadow: 10px 10px 17px #a0c4a2;
+          box-shadow: 10px 10px 17px #a0c4a2;
+  border-radius: 50px;
 }
 
-.card-horizontal {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-}
-
-.card-horizontal .card-img {
-  height: 100%;
-  width: 200px;
-  border-radius: 0%;
-}
-
-.card-horizontal .card-title {
-  font-size: 20px;
-  font-weight: bold;
-  font-style: italic;
-  text-align: center;
-}
-
-.card-horizontal div .row {
-  padding-left: 150px;
-  text-align: center;
-}
-
-.card-horizontal .card-text {
-  font-size: 15px;
-  text-align: center;
-}
-
-.modal-body label {
-  font-size: 20px;
-}
-
-.modal-body input {
-  border: 2px solid black;
-}
-
-.modal-body .get-result {
-  background-color: #660a02;
-  border: none;
-  height: 30px;
-  width: 70px;
-  color: white;
-  margin: 5px;
-}
-
-.modal-body .get-result:hover {
-  background-color: #c2291b;
-  color: #171415;
+.modal input:active, .modal input:focus {
+  background: #d4e6d5;
+  -webkit-box-shadow: 10px 10px 17px #85aa87;
+          box-shadow: 10px 10px 17px #85aa87;
 }
 /*# sourceMappingURL=secondarystyle.css.map */

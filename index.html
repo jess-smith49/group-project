@@ -52,13 +52,10 @@
   <div id="recipe-modal" class="modal">
     <!--modal content-->
     <div class="modal-content">
-      <div class="modal-header">
-        <h2>Search Here for a Recipe</h2>
-      </div>
       <div class="modal-body">
-        <div class="card">
+       
           <div class="container-fluid">
-            <form>
+            <form> 
               <div class="form-group">
                 <label for="query-search">Search by name:</label>
                 <br>
@@ -66,14 +63,15 @@
               </div>
               <button id="find-recipe" class="get-result">Search</button>
             </form>
-          </div>
+         
         </div>
         <div id="recipe-search">
-          <ul id="recipe-results">
-          </ul>
+          <div class="card-group">
+         
         </div>
+        </div>
+        <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
       </div>
-      <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
     </div>
   </div>
 
@@ -102,10 +100,7 @@
             </form>
           </div>
         </div>
-        <div id="drink-search">
-          <ul id="drink-results">
-          </ul>
-        </div>
+        <div class="card-group" />
         <button type="button" class="btn btn-close" data-dismiss="modal">Close</button>
       </div>
     </div>

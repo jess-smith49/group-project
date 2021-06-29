@@ -120,7 +120,7 @@ $("#find-drink").click(function (event) {
 function displayDrinkList(cocktail) {
     console.log(cocktail);
     // create a loop to go through the array and return up to 10 drinks
-    let drinkSection = $("#drink-results");
+    let drinkSection = $(".card-group");
     //for (var i = 0; i < 1; i++) {
     //let drinkName = $("<li>").text(cocktail.drinks[0].strDrink);
     let drinkName = cocktail.drinks[0].strDrink;
@@ -168,30 +168,17 @@ function displayDrinkList(cocktail) {
 
 
     // append to modal
-    let insCard = `<div class="container-fluid" id="${k}">
-    <div class="row">
-    <div class="col-12 mt-3">
+    let insCard = `
     <div class="card">
-    <div class="card-horizontal">
-    <div class="img-square-wrapper">
-    <img class="card-img" src= ${drinkImg}>
+        <img class="card-img" src= ${drinkImg}>
+        <div class="card-body">
+                <h3 class="card-title">${drinkName}</h3>
+            <div class="card-text>
+             <div class="card-ingrdntl">${drinkData.split(',')}</div> 
+                <p>${drinkIns}</p>
+        </div>
     </div>
-    <div class="card-body">
-    <div class="card-title">${drinkName}</div>
-    <div class="row">
-    <div class="card-text>
-    <div class="card-ingrdntl">${drinkData.split(',')}</div>
-    </div>
-    <br>
-    <p>${drinkIns}</p>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>`
+   `
     drinkSection.append(insCard);
 
 };

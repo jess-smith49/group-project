@@ -74,173 +74,33 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
     }
 
 }
+
 .card {
-    display: flex;
-    flex: 1 1 auto;
-    margin: 10px;
-    box-shadow: -1px -1px 3px 3px #575252;
-
-
-    .card-img-top {
-        border: black 2px solid;
-        height: 250px;
-        width: 250px;
-        border-radius: 0%;
-        margin-left: 280px ;
-    }
-    
-    
-    .card-title {
-        font-size: 20px;
-        font-weight: bold;
-        font-style: italic;
-        text-align: center;
-    }
-    .card-text {
-      
-        padding: 15px;
-        font-size: 15px;
-        text-align: center;
-    }
-}
-.card-horizontal {
-    display: flex;
-    flex: 1 1 auto;
-  
-    .card-img {
-        height: 100%;
-        width: 200px;
-        border-radius: 0%;
-      
-    }
-    
-    .card-title {
-        font-size: 20px;
-        font-weight: bold;
-        font-style: italic;
-        text-align: center;
-    }
-    div {
-        .row {
-            padding-left: 150px;
-            text-align: center;
-        }
-    }
-    .card-text {
-      
-        font-size: 15px;
-        text-align: center;
-    }
-}
-
-.modal-body {
-    label {
-       
-        font-size: 20px;
-    }
-     input {
-         border: 2px solid black;
-     }
-    .get-result {
-    background-color: $color-bg-secondary;
-    border: none;
-    height: 30px;
-    width: 70px;
-   
-    color: $font-color-primary;
-    margin: 5px;
-
-        &:hover {
-            background-color: $color-bg-primary;
-            color: $font-color-secondary;
-        }
-    }
+    max-width: 18rem;
 }
 
 
-// @media #{$breakpoint-desktop} {
-//     header {
-//         font-size: 20px;
-//     }
-//     .cta {
-//         button {
-//             margin-left: 100px;
-//             height: 200px;
-//             width: 400px;
-//         }
-//     }
-// }
-
-// @media #{$breakpoint-tablet} {
-   
-//     .cta {
-//         height: 50vh;
-//         padding: 10px;
-//         font-size: 20px;
-//         button {
-//             width: 374px;
-//             border-radius: 0;
-//             margin: 0px;
-//             padding: 0;
-//         }
-//         .col-6 {
-//             padding: 0;
-//             align-items: center;
-//         }
-//     }
+.modal {
     
-//     footer {
-//         position: fixed;
-//         bottom: 0;
-//         width: 100%;
-//     }
-// }
+    &-content {
+        font-family: $heading;
+        background: #bce7be;
+        padding: 3%;
+    }
+    &-body {
+        box-shadow:  18px 18px 27px #a0c4a2;
+        border-radius: 50px;
+    }
 
-// @media #{$breakpoint-phone} {
-//     header {
-//         width: 100%;
-//     }
+    input {
+      background: #bce7be;
+      box-shadow:  10px 10px 17px #a0c4a2;
+      border-radius: 50px;
 
-//     .hero {
-//         position: fixed;
-//         height:40vh;
-//         width: 100%;
-//     }
-//     .cta {
-//          height: 60vh;
-//          padding: 10px;
-//          p {
-//               font-size: 15px;
-//               height: 150px;
-//             }
-//          button {
-            
-//              height: 100px;
-//              width:177.5px;
-//              margin:50px 60px 10px 0px;
-//              font-size: 15px;
-//             }
-//          .col-6 {
-//              padding: 0;
-//              align-items: center;
-//          }
-//         }
-        
-
-//     .saved-meals {
-//         div{
-//         position: fixed;
-//         bottom: 1px;
-//         width: 100%;
-//         }
-//     }
-
-//     footer {
-//         position: fixed;
-//         bottom: 0;
-//         width: 100%;
-//     }
-//     h5 {
-//         font-size: 15px;
-//     }
-// }
+      &:active,
+      &:focus {
+        background: #d4e6d5;
+        box-shadow:  10px 10px 17px #85aa87;
+      }
+    }
+}

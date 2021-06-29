@@ -68,7 +68,7 @@ function displayRecipes(recipe) {
 	console.log(recipe);
 
 	//declaring the variables to the data
-	let recipeSection = $("#recipe-results");
+	let recipeSection = $(".card-group");
 	let recipeName = recipe.meals[0].strMeal;
 	let recipeImg = recipe.meals[0].strMealThumb;
 	let recipeIns = recipe.meals[0].strInstructions;
@@ -112,20 +112,18 @@ function displayRecipes(recipe) {
 	}
 
 	//creating card for recipe section
-	let recipeCard =
-		`<div class="container-fluid">
-    <div class="row">
-    <div class="card">
-    <img class="card-img-top" src= ${recipeImg}>
-    <div class="card-body">
-    <div class="card-title">${recipeName}</div>
-    <div class="card-text">
-	<p class="card-ingrdnt">${recipeData}</p>
-    <p class="card-instructions">${recipeIns}</p>
-    </div>
-    </div>
-    </div>
-    </div>
+	let recipeCard =`
+   	<div class="card">
+			<img class="card-img" src= ${recipeImg}>
+			<div class="card-body">
+				<h3 class="card-title">${recipeName}</h3>
+			<div class="card-text">
+				<p class="card-ingrdnt">${recipeData}</p>
+				<p class="card-instructions">${recipeIns}</p>
+			</div>
+			</div>
+			</div>
+	
     </div>`
 
 
