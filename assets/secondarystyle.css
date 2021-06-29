@@ -14,28 +14,30 @@
   height: 70vh;
   -webkit-box-shadow: 28px 28px 57px #a0c4a2;
           box-shadow: 28px 28px 57px #a0c4a2;
-  padding: 3%;
+  padding: 4%;
   text-align: right;
 }
 
 .hero-pitch {
   font-family: "Abril Fatface", cursive;
-  padding-top: 5%;
+  background-color: rgba(126, 119, 119, 0.438);
+  color: white;
+  padding: 8% 2% 8% 2%;
 }
 
 .hero-pitch h2 {
-  font-size: 5vh;
+  font-size: 30pt;
 }
 
 .hero-pitch p {
   padding-left: 40%;
   margin-top: 4%;
-  font-size: 3vh;
+  font-size: 20pt;
 }
 
 .cta {
   background: #bce7be;
-  height: 30vh;
+  height: auto;
   padding: 1%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -48,6 +50,15 @@
           align-items: center;
   text-align: center;
   bottom: 0;
+}
+
+.cta .row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cta .button {
@@ -140,5 +151,26 @@
 .modal form button:hover, .modal form button:active, .modal form button:focus {
   -webkit-box-shadow: 10px 10px 17px #6e9770;
           box-shadow: 10px 10px 17px #6e9770;
+}
+
+footer {
+  background: #bce7be;
+  font-family: "Playfair Display", serif;
+  color: #495c4a;
+}
+
+footer a {
+  color: #495c4a;
+  text-decoration: none;
+}
+
+footer a:hover, footer a:active, footer a:focus {
+  text-shadow: 10px 10px 17px #6e9770;
+}
+
+@media (max-width: 870px) {
+  .hero p {
+    font-size: 18pt;
+  }
 }
 /*# sourceMappingURL=secondarystyle.css.map */

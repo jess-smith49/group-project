@@ -22,20 +22,21 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
     background-repeat: no-repeat;
     height: 70vh;
     box-shadow:  28px 28px 57px #a0c4a2;
-    padding: 3%;
+    padding: 4%;
     text-align: right;
     &-pitch {
         font-family: $heading;
-       
-        padding-top: 5%;
+        background-color: rgba(126, 119, 119, 0.438);
+        color: white;
+        padding: 8% 2% 8% 2%;
         h2 {
-            font-size: 5vh;
+            font-size: 30pt;
         }
        
         p {
             padding-left: 40%;
             margin-top: 4%;
-            font-size: 3vh;
+            font-size: 20pt;
         }
        
     }
@@ -45,13 +46,18 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
 
 .cta {
     background: #bce7be;
-    height: 30vh;
+    height: auto;
     padding: 1%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     bottom: 0;
+
+    .row {
+        justify-content: center;
+        align-items: center;
+    }
    
     .button {
         height: 12rem;
@@ -149,5 +155,33 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
         }
     }
 
+}
+
+footer {
+    background: #bce7be;
+    font-family: $text;
+    color: #495c4a;
+
+    a {
+        color: #495c4a;
+        text-decoration: none;
+
+        &:hover,
+        &:active,
+        &:focus {
+            text-shadow:  10px 10px 17px #6e9770;
+        }
+    }
+}
+
+@media (max-width: 870px) {
+
+    .hero {
+        p {
+            font-size: 18pt;
+        }
+    }
+
+   
 }
 
