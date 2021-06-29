@@ -64,7 +64,31 @@
 }
 
 .card {
-  max-width: 18rem;
+  max-width: 22rem;
+  min-width: 20rem;
+  border-radius: 15px;
+  margin: 5%;
+  padding: 2%;
+  background: #bce7be;
+  -webkit-box-shadow: 28px 28px 57px #a0c4a2, -28px -28px 57px #d8ffdb;
+          box-shadow: 28px 28px 57px #a0c4a2, -28px -28px 57px #d8ffdb;
+  border: none;
+}
+
+.card-group {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5%;
+}
+
+.card:hover, .card:active, .card:focus {
+  -webkit-box-shadow: 10px 10px 17px #6e9770;
+          box-shadow: 10px 10px 17px #6e9770;
+}
+
+.modal {
+  text-align: center;
 }
 
 .modal-content {
@@ -79,16 +103,38 @@
   border-radius: 50px;
 }
 
-.modal input {
+.modal form {
   background: #bce7be;
+  padding: 5%;
+}
+
+.modal form input {
+  background: #d5e6d5;
   -webkit-box-shadow: 10px 10px 17px #a0c4a2;
           box-shadow: 10px 10px 17px #a0c4a2;
   border-radius: 50px;
+  width: 25%;
+  border: none;
+  margin: 2%;
 }
 
-.modal input:active, .modal input:focus {
-  background: #d4e6d5;
-  -webkit-box-shadow: 10px 10px 17px #85aa87;
-          box-shadow: 10px 10px 17px #85aa87;
+.modal form input:hover, .modal form input:active, .modal form input:focus {
+  -webkit-box-shadow: 10px 10px 17px #6e9770;
+          box-shadow: 10px 10px 17px #6e9770;
+}
+
+.modal form button {
+  background: #bce7be;
+  -webkit-box-shadow: 10px 10px 17px #92c795, -10px -10px 17px #d2f3d5;
+          box-shadow: 10px 10px 17px #92c795, -10px -10px 17px #d2f3d5;
+  border-radius: 50px;
+  padding: 0 4% 0 4%;
+  margin-top: 1%;
+  border: none;
+}
+
+.modal form button:hover, .modal form button:active, .modal form button:focus {
+  -webkit-box-shadow: 10px 10px 17px #6e9770;
+          box-shadow: 10px 10px 17px #6e9770;
 }
 /*# sourceMappingURL=secondarystyle.css.map */

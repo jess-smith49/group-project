@@ -1,14 +1,10 @@
-$color-bg-primary: #c2291b;
-$color-bg-secondary: #660a02;
-$font-color-primary: white;
-$font-color-secondary: #171415;
+
 //font
 $heading:  'Abril Fatface', cursive;
 $text: 'Playfair Display', serif;
-//border-width
-$bw: 1.5em;
+
 //create brakpoints for media queries
-$breakpoint-desktop: "only screen and (min-width :1024px)";
+$breakpoint-xlarge: "only screen and (min-width :1440px)";
 $breakpoint-tablet: "only screen and (max-width : 768px)";
 $breakpoint-phone: "only screen and (max-width : 414px)";
 
@@ -68,6 +64,7 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
         font-family: $text;
             &:hover,
             &:active {
+               
                 box-shadow:  28px 28px 57px #6d8b6e,
                 -28px -28px 57px #c4e4c7;
             }
@@ -76,11 +73,33 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
 }
 
 .card {
-    max-width: 18rem;
+    max-width: 22rem;
+    min-width: 20rem;
+    border-radius: 15px;
+    margin: 5%;
+    padding: 2%;
+    background: #bce7be;
+    box-shadow:  28px 28px 57px #a0c4a2,
+    -28px -28px 57px #d8ffdb;
+    border: none;
+    
+    &-group {
+        justify-content: center;
+        padding: 5%;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        box-shadow:  10px 10px 17px #6e9770;
+    }
+  
 }
 
 
 .modal {
+    text-align: center;
+    
     
     &-content {
         font-family: $heading;
@@ -92,15 +111,42 @@ $breakpoint-phone: "only screen and (max-width : 414px)";
         border-radius: 50px;
     }
 
-    input {
-      background: #bce7be;
-      box-shadow:  10px 10px 17px #a0c4a2;
-      border-radius: 50px;
+    form {
+        background: #bce7be;
+        padding: 5%;
+       
 
-      &:active,
-      &:focus {
-        background: #d4e6d5;
-        box-shadow:  10px 10px 17px #85aa87;
-      }
+        input {
+            background: #d5e6d5;
+            box-shadow:  10px 10px 17px #a0c4a2;
+            border-radius: 50px;
+            width: 25%;
+            border: none;
+            margin: 2%;
+            &:hover,
+            &:active,
+            &:focus {
+                box-shadow:  10px 10px 17px #6e9770;
+            }
+
+        }
+      
+        button {
+            background: #bce7be;
+            box-shadow:   10px 10px 17px #92c795,
+            -10px -10px 17px #d2f3d5;
+            border-radius: 50px;
+            padding: 0 4% 0 4%;
+            margin-top: 1%;
+            border: none;
+
+            &:hover,
+            &:active,
+            &:focus {
+                box-shadow:  10px 10px 17px #6e9770;
+            }
+        }
     }
+
 }
+

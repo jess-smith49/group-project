@@ -114,7 +114,9 @@ function displayRecipes(recipe) {
 	//creating card for recipe section
 	let recipeCard =`
    	<div class="card">
+	  
 			<img class="card-img" src= ${recipeImg}>
+		
 			<div class="card-body">
 				<h3 class="card-title">${recipeName}</h3>
 			<div class="card-text">
@@ -122,8 +124,7 @@ function displayRecipes(recipe) {
 				<p class="card-instructions">${recipeIns}</p>
 			</div>
 			</div>
-			</div>
-	
+			
     </div>`
 
 
